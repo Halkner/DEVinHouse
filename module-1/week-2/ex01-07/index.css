@@ -27,6 +27,7 @@ header{
     position: relative;
     border-radius: 100px;
     padding: 10px;
+    height: 100%;
 }
 
 .menu li img:hover{
@@ -46,16 +47,25 @@ header{
 
 .menu li ul{
     position: absolute;
+    left: 0;
+    margin-top: 28px;
     display: none;
     width: 100%;
-    border-radius: 5px;
+    text-align: center;
 }
 
 .menu li:hover ul{
-    background-color: black;
+    background: black;
     display: block;
 }
 
 .menu li ul li{
-    margin: 50px 0;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+.menu li ul li:hover{
+    border-bottom: 0.5px solid rgba(252, 0, 0, 00.5px);
 }
