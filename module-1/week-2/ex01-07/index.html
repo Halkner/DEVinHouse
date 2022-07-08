@@ -10,20 +10,22 @@
 </head>
 <body>
     <header>
-        <nav class="top-bar">
-            <img src="assets/logo-circo.png" alt="Logo do circo com link para Home." class="logo">
+        <div class="header-container">
+            <div>
+                <img src="assets/logo-circo.png" alt="Logo do circo com link para Home." class="logo">
+            </div>
 
-            <ul class="menu">
-                <li>
-                    <img src="assets/menu.png" alt="menu">
-                    <ul>
-                        <li><a href="eventos.html">Eventos</a></li>
-                        <li><a href="sobre.html">Sobre</a></li>
-                        <li><a href="contato.html">Contato</a></li>
+            <nav class="top-bar">
+                <button onclick="abreFechaMenu('menu-container')"><img src="assets/menu.png" alt="menu"></button>
+                <div class="menu-container" id="menu-container">
+                    <ul class="menu" id="menu">
+                            <li><a href="eventos.html">Eventos</a></li>
+                            <li><a href="sobre.html">Sobre</a></li>
+                            <li><a href="contato.html">Contato</a></li>
                     </ul>
-                </li>
-            </ul>
-        </nav>
+                </div>
+            </nav>
+        </div>
     </header>
 
     <main>
@@ -33,5 +35,6 @@
     <footer>
         
     </footer>
+    <script src="index.js"></script>
 </body>
 </html>

@@ -1,71 +1,61 @@
 header{
-    /* background-color: rgba(255, 255, 255, 0.781); */
-    background: red;
+    display: flex;
+    background-color: red;
     width: 100%;
     height: 100px;
-    position: fixed;
 }
-
-.top-bar{
+.header-container{
     display: flex;
-    justify-content: space-between;
+    width: 92%;
+    height: 100%;
     align-items: center;
+    justify-content: space-between;
 }
 
 .logo{
     width: 130px;
     height: 104px;
-    margin-left: 10px;
-    float: none;
 }
 
-.menu li{
-    margin-right: 80px;
+.top-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.menu li img{
-    position: relative;
-    border-radius: 100px;
-    padding: 10px;
-    height: 100%;
-}
-
-.menu li img:hover{
+.top-bar button{
+    transform: scaleX(-1);
+    border-radius: 100%;
+    border: none;
+    background-color: transparent;
     cursor: pointer;
-    background-color: rgba(39, 40, 77, 0.644);
+    padding: 10px;
 }
 
-.menu li a{
-    color: rgba(131, 131, 131, 0.580);
-    text-decoration: none;
-    display: block;
+.top-bar button:hover{
+    background-color: white;
+}
+
+.menu-container{
+    display: none;
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    top: 100px;
+    left: 0;
+}
+
+.menu{
+    width: 30%;
+    margin: 0 auto;
+    padding-bottom: 3em;
 }
 
 .menu li a:hover{
-    color: rgb(168, 13, 13);
+    border-bottom: ;
 }
 
-.menu li ul{
-    position: absolute;
-    left: 0;
-    margin-top: 28px;
-    display: none;
-    width: 100%;
+.menu li{
+    margin-top: 3em;
     text-align: center;
-}
-
-.menu li:hover ul{
-    background: black;
-    display: block;
-}
-
-.menu li ul li{
-    width: 250px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
-}
-
-.menu li ul li:hover{
-    border-bottom: 0.5px solid rgba(252, 0, 0, 00.5px);
 }
