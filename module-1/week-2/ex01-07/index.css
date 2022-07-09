@@ -82,3 +82,46 @@ header{
     box-shadow: 0px 15px 20px rgba(165, 62, 79, 0.4);
     transform: translateY(-7px);
 }
+
+/* Main CSS */
+
+main{
+    height: 70vh;
+}
+.banner-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.banner{
+    width: 100%;
+    background-color: rgba(37, 39, 101, 0.125);
+}
+
+.banner img{
+    width: 100%;
+}
+
+.banner-info{
+    height: 120px;
+    text-align: center;
+    font-family: 'Josefin Slab', serif;
+    background-color: rgba(37, 39, 101, 0.125);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.banner-info h1{
+    padding: 1em;
+    font-weight: bold;
+    font-size: large;
+}
+
+h1 strong{
+    color: rgb(165, 62, 79);
+}
+
+p strong{
+    color: rgb(59, 4, 105);
+    font-weight: bold;
+}
