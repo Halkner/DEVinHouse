@@ -300,6 +300,14 @@ footer p, h4{
     color: white;
 }
 
+footer p{
+    font-size: 12px;
+}
+
+footer h4{
+    margin-bottom: 1em;
+}
+
 .container-footer-sobre-contato{
     display: flex;
     justify-content: space-between;
