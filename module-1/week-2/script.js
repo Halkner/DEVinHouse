@@ -19,3 +19,11 @@ function incrementar(){
 function decrementar(){
     n.innerText = parseInt(n.textContent) - 1;
 }
+
+function alteraTitulo(){
+    var titulo = document.getElementById("titulo");
+
+    var novoTitulo = document.getElementById("inputTitulo").value;
+
+    titulo.innerText = novoTitulo;
+}
