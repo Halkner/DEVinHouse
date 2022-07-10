@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@500&display=swap" rel="stylesheet">
+    <title>Circo Cristiana</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div>
+                <a href="index.html"><img src="assets/logo-circo.png" alt="Logo do circo com link para Home." class="logo"></a>
+            </div>
+
+            <nav class="top-bar">
+                <button onclick="abreFechaMenu('menu-container')"><img src="assets/menu.png" alt="menu"></button>
+
+                <div class="menu-container" id="menu-container">
+                    <ul class="menu" id="menu">
+                            <li><a href="index.html#eventos">Eventos</a></li>
+                            <li><a href="sobre.html">Sobre</a></li>
+                            <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="formulario">
+            <form>
+                <label for="nomesobrenome">Nome e Sobrenome</label>
+                <input type="text" id="nomesobrenome" class="input-padrao" required>
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" class="input-padrao" required placeholder="seuemail@dominio.com">
+
+                <label for="descricao">Descrição</label>
+                <textarea id="descricao" cols="70" rows="10" required></textarea>
+
+                <input type="submit" value="Enviar" class="enviar">
+            </form>
+        </div>
+
+    </main>
+
+    <footer>
+        
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -237,8 +237,56 @@ p strong{
     color: rgb(165, 62, 79);
 }
 
-@media (min-width: 700px) {
+/* Formulário */
+
+.formulario{
     
+}
+
+form {
+    margin: 40px 40px;
+}
+
+form label,
+form legend {
+    display: block;
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+.input-padrao,
+textarea {
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px 25px;
+    width: 50%;
+    border-style: solid;
+}
+
+.checkbox {
+    margin: 20px 0;
+}
+
+.enviar {
+    width: 40%;
+    padding: 15px 0;
+    background: rgb(255, 0, 0);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    transition: 0.3s all;
+}
+
+.enviar:hover {
+    background: darkred;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+@media (min-width: 700px) {
+
     .banner{
         height: 70vh;
     }
