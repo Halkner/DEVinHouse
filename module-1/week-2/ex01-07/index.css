@@ -93,7 +93,8 @@ header{
 /* Banner */
 
 main{
-    height: 70vh;
+    min-height: 70vh;
+    height: 100%;
 }
 .banner-container{
     display: flex;
@@ -283,6 +284,40 @@ textarea {
     background: darkred;
     cursor: pointer;
     transform: scale(1.05);
+}
+
+footer{
+    display: flex;
+    bottom: 0;
+    height: 30vh;
+    background: url("assets/footer-image.jpg");
+    background-size: cover;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+footer p, h4{
+    color: white;
+}
+
+.container-footer-sobre-contato{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+}
+
+.footer-sobre, .footer-contato{
+    text-align: center;
+    width: 30%;
+}
+
+.footer-contato{
+    margin-left: 40px;
+}
+
+.footer-sobre{
+    margin-right: 40px;
 }
 
 @media (min-width: 700px) {
