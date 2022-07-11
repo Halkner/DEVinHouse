@@ -1,4 +1,4 @@
-function calcularANo(){
+function calcularAno(){
     let ano = prompt("Digite um ano: ");
     let anoAtual = new Date().getFullYear();
 
