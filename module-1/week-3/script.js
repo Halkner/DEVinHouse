@@ -24,6 +24,5 @@ var listaConvidados = [
 ];
 
 for (var i = 0; i < listaConvidados.length; i++){
-    console.log(`${listaConvidados[i].nome} ${listaConvidados[i].sobrenome}`);
     document.getElementById("lista").innerHTML += `<li>${listaConvidados[i].nome} ${listaConvidados[i].sobrenome}</li>`
 };
