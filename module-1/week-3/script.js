@@ -90,4 +90,32 @@ function liberarBebidas(listaConvidados){
 }
 
 var convidadosComBebidasProcessada = liberarBebidas(listaDeConvidados);
-console.log(convidadosComBebidasProcessada);
+// console.log(convidadosComBebidasProcessada);
+
+// [M01S03] EX07 -----------------------------------
+
+function separarCamarote(listaConvidados){
+    let listaConvidadosFiltrada = listaConvidados.filter(convidado => convidado.setor === "Camarote");
+    return listaConvidadosFiltrada;
+}
+
+function separarPista(listaConvidados){
+    let listaConvidadosFitlrada = listaConvidados.filter(convidado => convidado.setor === "Pista");
+    return listaConvidadosFitlrada
+}
+
+function separarArquibancada(listaConvidados){
+    let listaConvidadosFitlrada = listaConvidados.filter(convidado => convidado.setor === "Arquibancada");
+    return listaConvidadosFitlrada
+}
+
+let listaCamarote = separarCamarote(convidadosComBebidasProcessada);
+let listaPista = separarPista(convidadosComBebidasProcessada);
+let listaArquibancada = separarArquibancada(convidadosComBebidasProcessada);
+
+// console.log("-- Lista Camarote --");
+// console.log(listaCamarote);
+// console.log("-- Lista Pista --");
+// console.log(listaPista);
+// console.log("-- Lista Arquibancada --");
+// console.log(listaArquibancada);
