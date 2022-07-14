@@ -70,3 +70,7 @@ let pessoa5 = new pessoaConvidada("Fábio", "Mariano", "Pista", 18);
 let pessoa6 = new pessoaConvidada("Adilson", "Elias", "Camarote", 45);
 
 console.log(pessoa1);
+
+// [M01S03] EX05 -----------------------------------
+
+var listaDeConvidados = [pessoa1, pessoa2, pessoa3, pessoa4, pessoa5, pessoa6];
