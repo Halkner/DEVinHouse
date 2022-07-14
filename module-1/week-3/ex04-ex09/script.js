@@ -57,20 +57,32 @@ let convidadosCamarote = separarCamarote(convidadosComBebidasProcessada);
 let convidadosPista = separarPista(convidadosComBebidasProcessada);
 let convidadosArquibancada = separarArquibancada(convidadosComBebidasProcessada);
 
-// [M01S03] EX08 -----------------------------------
+// [M01S03] EX08 e EX09 -----------------------------------
 
 let listaCamarote = document.getElementById("listaCamarote");
 let listaArquibancada = document.getElementById("listaArquibancada");
 let listaPista = document.getElementById("listaPista");
 
 Object.keys(convidadosCamarote).forEach(item => {
-    listaCamarote.innerHTML += `<li>${convidadosCamarote[item].nome} ${convidadosCamarote[item].sobrenome}</li>`
+    if (convidadosCamarote[item].openBar === false){
+        listaCamarote.innerHTML += `<li>${convidadosCamarote[item].nome} ${convidadosCamarote[item].sobrenome}</li>`
+    }else{
+        listaCamarote.innerHTML += `<li>${convidadosCamarote[item].nome} ${convidadosCamarote[item].sobrenome} 🍹</li>`
+    }
 });
 
 Object.keys(convidadosArquibancada).forEach(item => {
-    listaArquibancada.innerHTML += `<li>${convidadosArquibancada[item].nome} ${convidadosArquibancada[item].sobrenome}</li>`
+    if (convidadosArquibancada[item].openBar === false){
+        listaArquibancada.innerHTML += `<li>${convidadosArquibancada[item].nome} ${convidadosArquibancada[item].sobrenome}</li>`
+    }else{
+        listaArquibancada.innerHTML += `<li>${convidadosArquibancada[item].nome} ${convidadosArquibancada[item].sobrenome} 🍹</li>`
+    }
 });
 
 Object.keys(convidadosPista).forEach(item => {
-    listaPista.innerHTML += `<li>${convidadosPista[item].nome} ${convidadosPista[item].sobrenome}</li>`
+    if (convidadosPista[item].openBar === false){
+        listaPista.innerHTML += `<li>${convidadosPista[item].nome} ${convidadosPista[item].sobrenome}</li>`
+    }else{
+        listaPista.innerHTML += `<li>${convidadosPista[item].nome} ${convidadosPista[item].sobrenome} 🍹</li>`
+    } 
 });
