@@ -69,8 +69,25 @@ let pessoa4 = new pessoaConvidada("André","de Lima", "Arquibancada", 30);
 let pessoa5 = new pessoaConvidada("Fábio", "Mariano", "Pista", 18);
 let pessoa6 = new pessoaConvidada("Adilson", "Elias", "Camarote", 45);
 
-console.log(pessoa1);
-
 // [M01S03] EX05 -----------------------------------
 
 var listaDeConvidados = [pessoa1, pessoa2, pessoa3, pessoa4, pessoa5, pessoa6];
+
+// [M01S03] EX06 -----------------------------------
+
+function liberarBebidas(listaConvidados){
+    listaVazia = [];
+    for (const i in listaConvidados){
+        convidado = listaConvidados[i];
+        if (convidado.idade > 17){
+            convidado["openBar"] = true;
+        }else{
+            convidado["openBar"] = false;
+        }
+        listaVazia.push(convidado);
+    }
+    return listaVazia;
+}
+
+var convidadosComBebidasProcessada = liberarBebidas(listaDeConvidados);
+console.log(convidadosComBebidasProcessada);
