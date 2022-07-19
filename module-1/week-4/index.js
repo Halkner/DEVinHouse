@@ -15,3 +15,11 @@ const contasClientes = [
     saldo: 27350,
     },
 ];
+
+let selectClientes = document.getElementById("conta");
+
+function inputClientes(){
+    for(let i = 0; i < contasClientes.length; i++){
+        selectClientes.innerHTML += `<option>${contasClientes[i].nome}</option>`
+    }
+}
