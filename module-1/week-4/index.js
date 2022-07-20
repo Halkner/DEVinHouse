@@ -4,16 +4,19 @@ const contasClientes = [
     id: 1,
     nome: 'Cristiana',
     saldo: 51630,
+    senha: '1811',
     },
     {
     id: 2,
     nome: 'Matheus',
     saldo: 45970,
+    senha: '0707',
     },
     {
     id: 3,
     nome: 'Jaderson',
     saldo: 27350,
+    senha: '0311'
     },
 ];
 
@@ -32,26 +35,35 @@ function descobreID(cliente){
     return contasClientes.find(x => x.nome === cliente).id;
 }
 
-// Função de submit do botão do form
+// Função onclick
 function enviarOperacao(){
     let operacao = document.getElementById("operacao").value;
     let valor = Number(document.getElementById("valor").value);
     let cliente = selectClientes.value;
+    let password = document.getElementById("senha").value;
+    let id = descobreID(cliente);
 
-    checarPreenchimento(cliente, valor, operacao);
+    if (checarPreenchimento(cliente, valor, operacao) === true){
 
-    if(contasClientes.findIndex(x => x.nome === cliente) != -1){
-        let id = descobreID(cliente);
+        if(contasClientes[id-1].senha === password){
 
-        switch(operacao){
-            case "sacar":
-                sacar(valor, id);
-                break;
-            case "depositar":
-                depositar(valor, id);
+            if(contasClientes.findIndex(y => y.nome === cliente) != -1){
+
+                switch(operacao){
+                    case "sacar":
+                        sacar(valor, id);
+                        break;
+                    case "depositar":
+                        depositar(valor, id);
+                }
+            }else{
+                alert("Cliente não cadastrado!");
+            }
+        }else{
+            alert("Senha inválida!");
         }
     }else{
-        alert("Cliente não cadastrado!");
+        alert("Por favor, preencha todos os campos para realizar a operação!");
     }
 }
 
@@ -83,8 +95,12 @@ function depositar(valor, id){
     }
 }
 
+
+// Função para checar preenchimento dos campos
 function checarPreenchimento(cliente, valor, operacao){
     if(cliente === "" || valor === 0 || operacao === ""){
-        alert("Por favor, preencha todos os campos para realizar a operação.")
+        return false;
+    }else{
+        return true;
     }
 }
