@@ -47,6 +47,8 @@ function enviarOperacao(){
         case "sacar":
             sacar(valor, id);
             break;
+        case "depositar":
+            depositar(valor, id);
     }
 }
 
@@ -62,5 +64,18 @@ function sacar(valor, id){
         contasClientes[id-1].saldo -= valor
         saldoAposSaque = saldo - valor;
         alert(`Saque feito com sucesso! Foi sacado R$ ${valor} do seu saldo de R$ ${saldo}, ficando com R$ ${saldoAposSaque}. `);
+    }
+}
+
+// Função de depósito
+function depositar(valor, id){
+    let saldo = contasClientes[id-1].saldo;
+    
+    if (valor <= 0 || isNaN(valor)){
+        alert("Valor para depósito inválido.");
+    }else{
+        contasClientes[id-1].saldo += valor
+        saldoAposDeposito = saldo + valor;
+        alert(`Depósito feito com sucesso! Foi depositado R$ ${valor} no seu saldo de R$ ${saldo}, ficando com R$ ${saldoAposDeposito}. `);
     }
 }
