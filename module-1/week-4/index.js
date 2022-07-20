@@ -47,8 +47,6 @@ function enviarOperacao(){
         case "sacar":
             sacar(valor, id);
             break;
-        case "depositar":
-
     }
 }
 
@@ -57,7 +55,7 @@ function sacar(valor, id){
     let saldo = contasClientes[id-1].saldo;
     
     if (valor <= 0 || isNaN(valor)){
-        alert("Valor de saque inválido.");
+        alert("Valor para saque inválido.");
     }else if(valor > saldo){
         alert(`Saldo insuficiente! Seu saldo é de: R$ ${saldo}`);
     }else{
