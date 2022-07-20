@@ -29,11 +29,7 @@ function inputClientes(){
 
 // Função para descobrir o ID do cliente informado.
 function descobreID(cliente){
-    for(var chave in contasClientes){
-        if(contasClientes[chave].nome === cliente){
-            return contasClientes[chave].id;
-        }
-    }
+    return contasClientes.find(x => x.nome === cliente).id;
 }
 
 // Função de submit do botão do form
@@ -41,14 +37,21 @@ function enviarOperacao(){
     let operacao = document.getElementById("operacao").value;
     let valor = Number(document.getElementById("valor").value);
     let cliente = selectClientes.value;
-    let id = descobreID(cliente);
 
-    switch(operacao){
-        case "sacar":
-            sacar(valor, id);
-            break;
-        case "depositar":
-            depositar(valor, id);
+    checarPreenchimento(cliente, valor, operacao);
+
+    if(contasClientes.findIndex(x => x.nome === cliente) != -1){
+        let id = descobreID(cliente);
+
+        switch(operacao){
+            case "sacar":
+                sacar(valor, id);
+                break;
+            case "depositar":
+                depositar(valor, id);
+        }
+    }else{
+        alert("Cliente não cadastrado!");
     }
 }
 
@@ -63,7 +66,7 @@ function sacar(valor, id){
     }else{
         contasClientes[id-1].saldo -= valor
         saldoAposSaque = saldo - valor;
-        alert(`Saque feito com sucesso! Foi sacado R$ ${valor} do seu saldo de R$ ${saldo}, ficando com R$ ${saldoAposSaque}. `);
+        alert(`Saque feito com sucesso! Foi sacado R$ ${valor} do seu saldo de R$ ${saldo}, ficando com R$ ${saldoAposSaque}.`);
     }
 }
 
@@ -76,6 +79,12 @@ function depositar(valor, id){
     }else{
         contasClientes[id-1].saldo += valor
         saldoAposDeposito = saldo + valor;
-        alert(`Depósito feito com sucesso! Foi depositado R$ ${valor} no seu saldo de R$ ${saldo}, ficando com R$ ${saldoAposDeposito}. `);
+        alert(`Depósito feito com sucesso! Foi depositado R$ ${valor} no seu saldo de R$ ${saldo}, ficando com R$ ${saldoAposDeposito}.`);
+    }
+}
+
+function checarPreenchimento(cliente, valor, operacao){
+    if(cliente === "" || valor === 0 || operacao === ""){
+        alert("Por favor, preencha todos os campos para realizar a operação.")
     }
 }
