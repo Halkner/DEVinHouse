@@ -14,4 +14,12 @@ class Pedido{
         this.estaPago = false;
         this.listaProdutos = [];
     }
+    adicionarProduto(objProduto){
+        this.listaProdutos.push(objProduto);
+    }
 }
+
+const produto1 = new Produto("Batata", 8.99, true, 20);
+
+Pedido.adicionarProduto(produto1);
+console.log(Pedido.listaProdutos);
