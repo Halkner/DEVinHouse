@@ -6,7 +6,7 @@ class Produto {
         this.quantidade = quantidade;
     }
 }
-class Pedido{
+class Pedido {
     constructor(numeroPedido, nomeCliente){
         this.numeroPedido = numeroPedido;
         this.nomeCliente = nomeCliente;
@@ -14,12 +14,15 @@ class Pedido{
         this.estaPago = false;
         this.listaProdutos = [];
     }
+
     adicionarProduto(objProduto){
         this.listaProdutos.push(objProduto);
     }
 }
 
 const produto1 = new Produto("Batata", 8.99, true, 20);
+console.log(produto1);
 
-Pedido.adicionarProduto(produto1);
-console.log(Pedido.listaProdutos);
+const pedido1 = new Pedido(01, "Matheus");
+pedido1.adicionarProduto(produto1);
+console.log(pedido1);
