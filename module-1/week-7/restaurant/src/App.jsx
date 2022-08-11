@@ -1,10 +1,9 @@
+import { Header } from '../components/Header/Header';
 import './App.css'
 
 function App() {
   return (
-    <div>
-      <h1>Cristiana's Restaurant</h1>
-    </div>
+    <Header/>
   );
 }
 
