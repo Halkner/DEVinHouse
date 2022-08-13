@@ -20,6 +20,7 @@ header ul{
     width: 15vw;
     min-width: 200px;
     margin-left: 10vw;
+    filter: invert(100%);
 }
 
 .menu{
@@ -31,5 +32,5 @@ header ul{
     font-size: 25px;
     font-style: italic;
     font-weight: bold;
-    color: black;
+    text-shadow: 0 0 10px #FFFFFF;
 }

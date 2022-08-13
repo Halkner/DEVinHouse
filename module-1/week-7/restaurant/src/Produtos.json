@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "prato": "Pizza",
+        "descricao": "Clássica pizza italiana",
+        "valor": 80,
+        "tempoDePreparo":"25 minutos"
+    },
+    {
+        "id": 2,
+        "prato": "Ravioli",
+        "descricao": "Mini pastéis recheados com ingredientes diversos.",
+        "valor": 35,
+        "tempoDePreparo": "40 minutos"
+    },
+    {
+        "id": 3,
+        "prato": "Lasagna",
+        "descricao": "Camadas de massa e entremeadas com recheio e molho.",
+        "valor": 35,
+        "tempoDePreparo": "3 horas"
+    }
+]
