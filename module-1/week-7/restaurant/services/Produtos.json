@@ -15,8 +15,8 @@
     },
     {
         "id": 3,
-        "prato": "Lasagna",
-        "descricao": "Camadas de massa e entremeadas com recheio e molho.",
+        "prato": "Lasagna a bolonhesa",
+        "descricao": "Camadas de massa e entremeadas com recheio e molho a bolonhesa.",
         "valor": 35,
         "tempoDePreparo": "3 horas"
     }
