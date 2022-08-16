@@ -1,15 +1,20 @@
-import { Card } from '../components/Card/Card';
 import { Footer } from '../components/Footer/Footer';
 import { Header } from '../components/Header/Header';
+import { Secoes } from '../components/Secoes/Secoes';
 import './App.css';
 
 function App() {
+
+  const produtos = ['Pizza', 'Lasagna', 'Sardinha']
+
   return (
     <div>
       <Header/>
+
       <main>
-        <Card nome="Pizza" descricao="Clássica pizza italiana" valor="80" tempoDePreparo="25 minutos"/>
+        <Secoes secao='Entrada' produtos={produtos}/>
       </main>
+
       <Footer/>
     </div>
   );
