@@ -2,38 +2,126 @@
     "entradas": [
         {
             "id": 1,
+            "img": "/assets/baccala-mantecato.jpg",
             "prato": "Baccalà Mantecato",
             "descricao": "Aperitivo veneziano de bacalhau batido.",
-            "valor": 80,
+            "valor": 79.99,
             "tempoDePreparo":"1 hora"
         },
         {
             "id": 2,
+            "img": "/assets/bruschetta.jpg",
             "prato": "Bruschetta",
             "descricao": "Antepasto italiano feito à base de pão, que é tostado em grelha com azeite e depois esfregado com alho.",
-            "valor": 18,
+            "valor": 17.99,
             "tempoDePreparo": "40 minutos"
         },
         {
             "id": 3,
+            "img": "/assets/caponata-berinjela.jpg",
             "prato": "Caponata de Berinjela",
             "descricao": "Prato de origem siciliana, feito com beringelas e aipo cortados em pedaços e salteados em azeite, temperados com molho de tomate, azeitonas, alcaparras, vinagre e açúcar.",
-            "valor": 75,
-            "tempoDePreparo": "3 horas"
-        }
+            "valor": 74.99,
+            "tempoDePreparo": "40 minutos"
+        },
         {
             "id": 4,
+            "img": "/assets/frisella-pugliesi.jpg",
             "prato": "Frisella Pugliese",
-            "descricao": "Muito parecida com a torrada porém mais alta e mais dura para melhor conservação.",
-            "valor": 15,
-            "tempoDePreparo": "20 minutos"
-        }
+            "descricao": "Torradas crocantes feitas de farinha de trigo acompanhadas e temperadas com tomates, manjericão e pimenta.",
+            "valor": 19.99,
+            "tempoDePreparo": "15 minutos"
+        },
         {
             "id": 5,
             "prato": "Panzanella Branca da Toscana",
             "descricao": "Salada feita a base de pão e vegetais com um delicioso e simples molho com azeite, mostarda e vinagre.",
-            "valor": 25,
+            "valor": 24.99,
             "tempoDePreparo": "25 minutos"
+        }
+    ],
+    "principais" : [
+        {
+            "id": 6,
+            "img": "/assets/agnello-alle-olive.jpg",
+            "prato": "Agnello Alle Olive",
+            "descricao": "Cordeio cozido na panela com azeitonas pretas e marinado com suco de limão.",
+            "valor": 49.99,
+            "tempoDePreparo": "40 minutos"
+        },
+        {
+            "id": 7,
+            "img": "/assets/anchova-marinada.jpg",
+            "prato": "Anchova Marinada",
+            "descricao": "Anchovas marinadas com vinagre, limão e sal.",
+            "valor": 44.99,
+            "tempoDePreparo": "45 minutos"
+        },
+        {
+            "id": 8,
+            "img": "/assets/costela-de-cordeiro-a-calabresa.jpg",
+            "prato": "Costela de cordeiro à calabresa",
+            "descricao": "Costela de cordeiro com molho de tomate encorpado com calabresa e temperado com orégano.",
+            "valor": 84.99,
+            "tempoDePreparo": "50 minutos"
+        },
+        {
+            "id": 9,
+            "img": "/assets/javali-com-polenta.jpg",
+            "prato": "Javali com Polenta",
+            "descricao": "Javali marinado levado ao forno e acompanhado com polentra cremosa.",
+            "valor": 94.99,
+            "tempoDePreparo": "50 minutos"
+        },
+        {
+            "id": 10,
+            "img": "/assets/rosbife-com-champignon.jpg",
+            "prato": "Rosbife com Champignon",
+            "descricao": "Peça de filé mignon selado em fogo alto e levado ao forno, servido acompanhado com um delicioso molho de cogumelos.",
+            "valor": 119.99,
+            "tempoDePreparo": "40 minutos"
+        }
+    ],
+    "sobremesas" :[
+        {
+            "id": 11,
+            "img": "/assets/crescionda.jpg",
+            "prato": "Crecionda de três camadas",
+            "descricao": "Torta de macarons triturados com chocolate amargo.",
+            "valor": 44.99,
+            "tempoDePreparo": "50 minutos"
+        },
+        {
+            "id": 12,
+            "img": "/assets/focacia-de-uva.jpg",
+            "prato": "Focaccia de Uva",
+            "descricao": "Deliciosa combinação da massa fofa de pão com o adocicado da uva",
+            "valor": 34.99,
+            "tempoDePreparo": "30 minutos"
+        },
+        {
+            "id": 13,
+            "img": "/assets/fregolata.jpg",
+            "prato": "Fregolata",
+            "descricao": "Torta crocante de amêndoas.",
+            "valor": 54.99,
+            "tempoDePreparo": "45 minutos"
+        },
+        {
+            "id": 14,
+            "img": "/assets/palha-italiana.jpg",
+            "prato": "Palha Italiana",
+            "descricao": "Doce feito à base de brigadeiro e biscoito triturado moldados em tabletes.",
+            "valor": 24.99,
+            "tempoDePreparo": "20 minutos"
+        },
+        {
+            "id": 15,
+            "img": "/assets/rabanada.jpg",
+            "prato": "Rabanada",
+            "descricao": "Doce de pão de trigo em fatias, molhadas em leite, passadas por ovos e fritas.",
+            "valor": 14.99,
+            "tempoDePreparo": "15 minutos"
         }
     ]
 }
