@@ -39,7 +39,7 @@ strong{
     color: goldenrod;
 }
 
-hr{
+.hr-footer{
     width: 20px;
     height: 2px;
     background: rgb(10,103,1);

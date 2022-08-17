@@ -1,0 +1,42 @@
+.card{
+    width: 20vw;
+    width: 300px;
+    min-height: 400px;
+    box-shadow: -1px 4px 17px -3px rgba(0,0,0,0.63);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.card-info{
+    padding: 1em;
+    font-size: 13px;
+}
+
+.prato{
+    text-align: center;
+    font-size: 20px;
+}
+
+.hr-card{
+    width: 50%;
+    height: 1px;
+    background: rgb(10,103,1);
+    background: linear-gradient(90deg, rgba(10,103,1,1) 0%, rgba(255,255,255,1) 50%, rgba(255,0,0,1) 100%);
+    margin: 0 auto 1em auto;
+    border: none;
+}
+
+.card-image{
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.descricao{
+    margin-bottom: 10px;
+}
+
+.valor, 
+.tempo{
+    text-align: center;
+    margin-top: 15px;
+}

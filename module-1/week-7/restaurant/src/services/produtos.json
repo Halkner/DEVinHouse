@@ -2,7 +2,7 @@
     "entradas": [
         {
             "id": 1,
-            "img": "/assets/baccala-mantecato.jpg",
+            "img": "/assets/entradas/baccala-mantecato.jpg",
             "prato": "Baccalà Mantecato",
             "descricao": "Aperitivo veneziano de bacalhau batido.",
             "valor": 79.99,
@@ -10,7 +10,7 @@
         },
         {
             "id": 2,
-            "img": "/assets/bruschetta.jpg",
+            "img": "/assets/entradas/bruschetta.jpg",
             "prato": "Bruschetta",
             "descricao": "Antepasto italiano feito à base de pão, que é tostado em grelha com azeite e depois esfregado com alho.",
             "valor": 17.99,
@@ -18,7 +18,7 @@
         },
         {
             "id": 3,
-            "img": "/assets/caponata-berinjela.jpg",
+            "img": "/assets/entradas/caponata-berinjela.jpg",
             "prato": "Caponata de Berinjela",
             "descricao": "Prato de origem siciliana, feito com beringelas e aipo cortados em pedaços e salteados em azeite, temperados com molho de tomate, azeitonas, alcaparras, vinagre e açúcar.",
             "valor": 74.99,
@@ -26,7 +26,7 @@
         },
         {
             "id": 4,
-            "img": "/assets/frisella-pugliesi.jpg",
+            "img": "/assets/entradas/frisella-pugliesi.jpg",
             "prato": "Frisella Pugliese",
             "descricao": "Torradas crocantes feitas de farinha de trigo acompanhadas e temperadas com tomates, manjericão e pimenta.",
             "valor": 19.99,
@@ -34,6 +34,7 @@
         },
         {
             "id": 5,
+            "img": "/assets/entradas/panzanella.jpg",
             "prato": "Panzanella Branca da Toscana",
             "descricao": "Salada feita a base de pão e vegetais com um delicioso e simples molho com azeite, mostarda e vinagre.",
             "valor": 24.99,
