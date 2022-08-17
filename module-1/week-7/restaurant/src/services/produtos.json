@@ -22,7 +22,8 @@
             "prato": "Caponata de Berinjela",
             "descricao": "Prato de origem siciliana, feito com beringelas e aipo cortados em pedaços e salteados em azeite, temperados com molho de tomate, azeitonas, alcaparras, vinagre e açúcar.",
             "valor": 74.99,
-            "tempoDePreparo": "40 minutos"
+            "tempoDePreparo": "40 minutos",
+            "subSecao": "Saladas"
         },
         {
             "id": 4,
@@ -38,87 +39,135 @@
             "prato": "Panzanella Branca da Toscana",
             "descricao": "Salada feita a base de pão e vegetais com um delicioso e simples molho com azeite, mostarda e vinagre.",
             "valor": 24.99,
+            "tempoDePreparo": "25 minutos",
+            "subSecao": "Saladas"
+        }
+    ],
+    "saladas":[
+        {
+            "id": 6,
+            "img": "/assets/saladas/beringela-parmegiana.jpg",
+            "prato": "Beringela à Parmegiana",
+            "descricao": "Beringela com molho de tomate e queijo mussarela.",
+            "valor": 34.99,
+            "tempoDePreparo": "30 minutos"
+        },
+        {
+            "id": 7,
+            "img": "/assets/saladas/pimentao-marinado.jpg",
+            "prato": "Pimentão Marinado",
+            "descricao": "Pimentão marinado com hortelã.",
+            "valor": 14.99,
+            "tempoDePreparo": "20 minutos"
+        },
+        {
+            "id": 8,
+            "img": "/assets/saladas/salada-frango.jpg",
+            "prato": "Salada de Frango",
+            "descricao": "Salada de frango com batata, vagem, cenoura e ervilha.",
+            "valor": 34.99,
             "tempoDePreparo": "25 minutos"
+        },
+        {
+            "id": 9,
+            "img": "/assets/saladas/tomate-recheado.jpg",
+            "prato": "Tomate Recheado",
+            "descricao": "Tomate recheado com presunto e ricota.",
+            "valor": 14.99,
+            "tempoDePreparo": "15 minutos"
+        },
+        {
+            "id": 10,
+            "img": "/assets/saladas/polenta-cogumelo.jpg",
+            "prato": "Polenta com Cogumelos",
+            "descricao": "Polenta cremosa com cogumelos refogados e espinafre.",
+            "valor": 22.99,
+            "tempoDePreparo": "20 minutos"
         }
     ],
     "principais" : [
         {
-            "id": 6,
-            "img": "/assets/agnello-alle-olive.jpg",
+            "id": 11,
+            "img": "/assets/principal/agnello-alle-olive.jpg",
             "prato": "Agnello Alle Olive",
             "descricao": "Cordeio cozido na panela com azeitonas pretas e marinado com suco de limão.",
             "valor": 49.99,
-            "tempoDePreparo": "40 minutos"
+            "tempoDePreparo": "40 minutos",
+            "subSecao": "Carnes"
         },
         {
-            "id": 7,
-            "img": "/assets/anchova-marinada.jpg",
+            "id": 12,
+            "img": "/assets/principal/anchova-marinada.jpg",
             "prato": "Anchova Marinada",
             "descricao": "Anchovas marinadas com vinagre, limão e sal.",
             "valor": 44.99,
-            "tempoDePreparo": "45 minutos"
+            "tempoDePreparo": "45 minutos",
+            "subSecao": "Peixes"
         },
         {
-            "id": 8,
-            "img": "/assets/costela-de-cordeiro-a-calabresa.jpg",
+            "id": 13,
+            "img": "/assets/principal/costela-de-cordeiro-a-calabresa.jpg",
             "prato": "Costela de cordeiro à calabresa",
             "descricao": "Costela de cordeiro com molho de tomate encorpado com calabresa e temperado com orégano.",
             "valor": 84.99,
-            "tempoDePreparo": "50 minutos"
+            "tempoDePreparo": "50 minutos",
+            "subSecao": "Carnes"
         },
         {
-            "id": 9,
-            "img": "/assets/javali-com-polenta.jpg",
+            "id": 14,
+            "img": "/assets/principal/javali-com-polenta.jpg",
             "prato": "Javali com Polenta",
             "descricao": "Javali marinado levado ao forno e acompanhado com polentra cremosa.",
             "valor": 94.99,
-            "tempoDePreparo": "50 minutos"
+            "tempoDePreparo": "50 minutos",
+            "subSecao": "Carnes"
         },
         {
-            "id": 10,
-            "img": "/assets/rosbife-com-champignon.jpg",
+            "id": 15,
+            "img": "/assets/principal/rosbife-com-champignon.jpg",
             "prato": "Rosbife com Champignon",
             "descricao": "Peça de filé mignon selado em fogo alto e levado ao forno, servido acompanhado com um delicioso molho de cogumelos.",
             "valor": 119.99,
-            "tempoDePreparo": "40 minutos"
+            "tempoDePreparo": "40 minutos",
+            "subSecao": "Carnes"
         }
     ],
     "sobremesas" :[
         {
-            "id": 11,
-            "img": "/assets/crescionda.jpg",
+            "id": 16,
+            "img": "/assets/sobremesas/crescionda.jpg",
             "prato": "Crecionda de três camadas",
             "descricao": "Torta de macarons triturados com chocolate amargo.",
             "valor": 44.99,
             "tempoDePreparo": "50 minutos"
         },
         {
-            "id": 12,
-            "img": "/assets/focacia-de-uva.jpg",
+            "id": 17,
+            "img": "/assets/sobremesas/focacia-de-uva.jpg",
             "prato": "Focaccia de Uva",
             "descricao": "Deliciosa combinação da massa fofa de pão com o adocicado da uva",
             "valor": 34.99,
             "tempoDePreparo": "30 minutos"
         },
         {
-            "id": 13,
-            "img": "/assets/fregolata.jpg",
+            "id": 18,
+            "img": "/assets/sobremesas/fregolata.jpg",
             "prato": "Fregolata",
             "descricao": "Torta crocante de amêndoas.",
             "valor": 54.99,
             "tempoDePreparo": "45 minutos"
         },
         {
-            "id": 14,
-            "img": "/assets/palha-italiana.jpg",
+            "id": 19,
+            "img": "/assets/sobremesas/palha-italiana.jpg",
             "prato": "Palha Italiana",
             "descricao": "Doce feito à base de brigadeiro e biscoito triturado moldados em tabletes.",
             "valor": 24.99,
             "tempoDePreparo": "20 minutos"
         },
         {
-            "id": 15,
-            "img": "/assets/rabanada.jpg",
+            "id": 20,
+            "img": "/assets/sobremesas/rabanada.jpg",
             "prato": "Rabanada",
             "descricao": "Doce de pão de trigo em fatias, molhadas em leite, passadas por ovos e fritas.",
             "valor": 14.99,

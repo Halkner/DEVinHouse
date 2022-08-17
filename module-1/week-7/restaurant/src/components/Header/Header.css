@@ -1,8 +1,9 @@
 header{
     width: 100%;
-    height: 20vh;
+    height: 40vh;
     background: url("../../assets/header-banner.jpg");
     background-size: cover;
+    background-position: center;
     margin-bottom: 2em;
 }
 
@@ -17,20 +18,23 @@ header ul{
 
 
 .logo img{
-    width: 15vw;
+    width: 30vw;
     min-width: 200px;
     margin-left: 10vw;
-    filter: invert(100%);
 }
 
 .menu{
     margin-right: 10vw;
+    transition: all 0.5s;
 }
 
 .menu a{
     text-decoration: none;
     font-size: 25px;
-    font-style: italic;
-    font-weight: bold;
-    text-shadow: 0 0 10px #FFFFFF;
+    color: darkkhaki;
+    font-family: 'Aboreto', cursive;
+}
+
+.menu:hover{
+    transform: scale(1.02);
 }

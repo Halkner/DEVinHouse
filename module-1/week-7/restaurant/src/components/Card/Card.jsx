@@ -4,7 +4,6 @@ import './Card.css';
 
 export const Card = ({produto}) => {
     const valorFormatado = Number(produto.valor).toLocaleString('pt-br', {style: 'currency', currency: 'BRL'});
-    console.log('card');
     return (
         <div className="card">
             <img className="card-image" alt="Foto do prato" src={produto.img}/>
@@ -29,6 +28,6 @@ Card.propTypes = {
       prato: PropTypes.string.isRequired,
       descricao: PropTypes.string.isRequired,
       valor: PropTypes.number.isRequired,
-      tempoDePreparo: PropTypes.string.isRequired,
+      tempoDePreparo: PropTypes.string,
     }),
 };

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-
 import { Card } from '../Card/Card';
+import './RenderizaCard.css';
 
 export const RenderizaCard = ({produtos}) =>{
     return(
