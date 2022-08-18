@@ -13,11 +13,11 @@ function App() {
       <Header/>
 
       <main>
-        <Secoes secao='Entradas' produtos={produtos.entradas}/>
+        <Secoes secao='Entradas' produtos={produtos.entradas} subSecoes={subSecoesEntradas}/>
         
         <Secoes secao='Saladas' produtos={produtos.saladas}/>
-
-        <Secoes secao='Pratos Principais' produtos={produtos.principais}/>
+ 
+        <Secoes secao='Pratos Principais' produtos={produtos.principais} subSecoes={subSecoesPrincipais}/>
 
         <Secoes secao='Sobremesas' produtos={produtos.sobremesas}/>
       </main>

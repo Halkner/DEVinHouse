@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 
 import { RenderizaCard } from '../RenderizaCard/RenderizaCard';
+import { SubSecoes } from '../SubSecoes/SubSecoes';
 import './Secoes.css';
 
 export const Secoes = ({secao, produtos, subSecoes}) => {
@@ -11,7 +12,11 @@ export const Secoes = ({secao, produtos, subSecoes}) => {
                 <hr />
             </div>
             <div className='cards-secao'>
-                <RenderizaCard produtos={produtos}/>
+                {subSecoes?.length > 0 ? (
+                    subSecoes.map((sub, index) => <SubSecoes key={index} produtos={produtos} subSecao={sub} />)
+                ) : (
+                    <RenderizaCard produtos={produtos}/>
+                )}
             </div>
         </div>
     );
