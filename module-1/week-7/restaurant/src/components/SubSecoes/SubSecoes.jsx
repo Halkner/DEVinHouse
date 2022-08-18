@@ -1,6 +1,8 @@
 import { RenderizaCard } from "../RenderizaCard/RenderizaCard";
 
-export const SubSecoes = (produtos, subSecao) =>{
+import './SubSecoes.css';
+
+export const SubSecoes = ({produtos, subSecao}) =>{
     const subSecaoFiltradas = produtos.filter((prod) => prod.subSecao === subSecao);
 
     return(

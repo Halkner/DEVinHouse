@@ -7,7 +7,7 @@ header{
     margin-bottom: 2em;
 }
 
-header ul{
+.menu-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,7 +19,7 @@ header ul{
 
 .logo img{
     width: 30vw;
-    min-width: 200px;
+    min-width: 300px;
     margin-left: 10vw;
 }
 
@@ -38,3 +38,28 @@ header ul{
 .menu:hover{
     transform: scale(1.02);
 }
+
+@media (max-width: 600px) {
+    .menu-container{
+        flex-direction: column;
+    }
+
+    .logo{
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+    }
+
+    .logo img{
+        filter: brightness(300%);
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .menu{
+        margin: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+    }
+  }

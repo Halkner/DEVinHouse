@@ -25,6 +25,6 @@ export const Secoes = ({secao, produtos, subSecoes}) => {
 Secoes.propTypes = {
     secao: PropTypes.string.isRequired,
     produtos: PropTypes.array.isRequired,
-    // subSecoes: PropTypes.arrayOf(PropTypes.string),
+    subSecoes: PropTypes.arrayOf(PropTypes.string),
 };
   

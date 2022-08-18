@@ -1,0 +1,12 @@
+.sub-secao{
+    margin-left: 40px;
+}
+
+.sub-secao h3{
+    font-family: 'Aboreto', cursive;
+    margin-top: 2em;
+}
+
+.sub-secao hr{
+    margin-bottom: 2em;
+}
