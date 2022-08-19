@@ -7,7 +7,6 @@
 <p align="center">WebPage for an Italian Restaurant Menu</p>
 
 <p align="center">
- <a href="#objective">Objective</a> •
  <a href="#technology">Technology</a> • 
  <a href="#commands">Commands</a> • 
  <a href="#author">Author</a>
@@ -16,6 +15,10 @@
 <p align="center">
     <img alt="Page Preview" src="./public/assets/page-preview.gif" />
 </p>
+
+## 🛠 Technology
+
+[React](https://reactjs.org/)
 
 ### Running web application
 
@@ -31,3 +34,8 @@ $ npm run dev
 # 
 Access localhost with the port informed in the terminal (usually localhost:3000)
 ```
+
+## 📝 Author
+
+
+Made by Matheus Adriano Martins 😉 [Contact me](https://www.linkedin.com/in/matheus-adriano-martins-665b78183/)
