@@ -7,9 +7,9 @@
 <p align="center">WebPage for an Italian Restaurant Menu</p>
 
 <p align="center">
- <a href="#technology">Technology</a> • 
- <a href="#commands">Commands</a> • 
- <a href="#author">Author</a>
+ <a href="#-technology">Technology</a> • 
+ <a href="#-running-web-application">Commands</a> • 
+ <a href="#-author">Author</a>
 </p>
 
 <p align="center">
