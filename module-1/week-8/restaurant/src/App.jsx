@@ -7,23 +7,34 @@ function App() {
   const subSecoesPrincipais = new Set(produtos.principais.map((p) => p.subSecao));
   console.log(subSecoesEntradas, subSecoesPrincipais);
 
+  const arraySecoes = [
+    {
+      nome: 'Entradas', 
+      produtos: produtos.entradas, 
+      subSecoes: subSecoesEntradas
+    },
+    {
+      nome: 'Principais',
+      produtos: produtos.principais,
+      subSecoes: subSecoesPrincipais
+    },
+    {
+      nome: 'Sobremesas',
+      produtos: produtos.sobremesas,
+    }
+  ];
+
   return (
     <div className={styles.app}>
       <Header />
       <main className={styles.main}>
-        <Secao
-          nome='Entradas'
-          produtos={produtos.entradas}
-          subSecoes={Array.from(subSecoesEntradas)}
-        />
 
-        <Secao
-          nome='Principais'
-          produtos={produtos.principais}
-          subSecoes={Array.from(subSecoesPrincipais)}
-        />
-
-        <Secao nome='Sobremesas' produtos={produtos.sobremesas} />
+        {arraySecoes.map((sec) =>(
+          <Secao nome={sec.nome}
+          produtos={sec.produtos}
+          subSecoes={sec.subSecoes ? Array.from(sec.subSecoes) : null}/>
+        ))}
+        
       </main>
       <Footer />
     </div>
