@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "nome": "Entradas", 
+    "produtos": "produtos.entradas", 
+    "subSecoes": "subSecoesEntradas"
+  },
+  {
+    "id": 2,
+    "nome": "Principais",
+    "produtos": "produtos.principais",
+    "subSecoes": "subSecoesPrincipais"
+  },
+  {
+    "id": 3,
+    "nome": "Sobremesas",
+    "produtos": "produtos.sobremesas"
+  }
+]
