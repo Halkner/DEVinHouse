@@ -1,0 +1,32 @@
+.filterContainer{
+    width: 100%;
+    height: 100px;
+}
+
+.listSections{
+    display: flex;
+    list-style: none;
+    color: black;
+    align-items: center;
+    height: 100%;
+    gap: 50px;
+    margin-left: 2em;
+}
+
+.filterBy{
+    font-size: 22px;
+    color: #37b000;
+    font-weight: bold;
+}
+
+.filterOptions{
+    font-size: 18px;
+    padding: 15px;
+    color: #a2ee8b;
+    transition: all 0.4s;
+}
+
+.filterOptions:hover{
+    cursor: pointer;
+    color: #37b000;
+}

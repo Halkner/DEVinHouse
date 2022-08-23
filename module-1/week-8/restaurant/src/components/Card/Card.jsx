@@ -38,4 +38,5 @@ Card.propTypes = {
     valor: PropTypes.number.isRequired,
     tempoPreparo: PropTypes.string.isRequired,
   }),
+  selecionado: PropTypes.bool.isRequired
 };

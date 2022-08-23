@@ -1,5 +1,6 @@
 import { Footer, Header, Secao } from '@components';
 import produtos from '@services/produtos.json';
+import { FiltroSecao } from '@components/FiltroSecao/FiltroSecao';
 import styles from './App.module.css';
 
 function App() {
@@ -29,9 +30,16 @@ function App() {
     }
   ];
 
+  const handleSelecionarSecao = (nomeSecao) => {
+    console.log(nomeSecao);
+  }
+  
   return (
     <div className={styles.app}>
+
       <Header />
+      <FiltroSecao secoes={arraySecoes} onSelecionarSecao={handleSelecionarSecao}/>
+
       <main className={styles.main}>
 
         {arraySecoes.map((sec) =>(
@@ -41,7 +49,7 @@ function App() {
           produtos={sec.produtos}
           subSecoes={sec.subSecoes ? Array.from(sec.subSecoes) : null}/>
         ))}
-        
+
       </main>
       <Footer />
     </div>
