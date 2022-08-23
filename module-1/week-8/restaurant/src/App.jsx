@@ -2,12 +2,14 @@ import { Footer, Header, Secao } from '@components';
 import produtos from '@services/produtos.json';
 import { FiltroSecao } from '@components/FiltroSecao/FiltroSecao';
 import styles from './App.module.css';
+import { useState } from 'react';
 
 function App() {
 
   const subSecoesEntradas = new Set(produtos.entradas.map((p) => p.subSecao));
   const subSecoesPrincipais = new Set(produtos.principais.map((p) => p.subSecao));
-  console.log(subSecoesEntradas, subSecoesPrincipais);
+  
+  const [secaoSelecionada, setSecaoSelecionada] = useState(null);
 
 
  const arraySecoes = [
@@ -31,14 +33,22 @@ function App() {
   ];
 
   const handleSelecionarSecao = (nomeSecao) => {
-    console.log(nomeSecao);
+    if(nomeSecao === secaoSelecionada){
+      setSecaoSelecionada(null);
+    }else{
+      setSecaoSelecionada(nomeSecao)
+    }
   }
   
   return (
     <div className={styles.app}>
 
       <Header />
-      <FiltroSecao secoes={arraySecoes} onSelecionarSecao={handleSelecionarSecao}/>
+      {secaoSelecionada ? 
+        <FiltroSecao secoes={secaoSelecionada} onSelecionarSecao={handleSelecionarSecao}/> 
+        :
+        <FiltroSecao secoes={arraySecoes} onSelecionarSecao={handleSelecionarSecao}/>
+      }
 
       <main className={styles.main}>
 
