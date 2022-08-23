@@ -32,6 +32,11 @@ function App() {
     }
   ];
 
+  const debug = () =>{
+    const findei = Array.from(produtos).find(o => o == 'entradas');
+    console.log(findei);
+  }
+
   const handleSelecionarSecao = (nomeSecao) => {
     if(nomeSecao === secaoSelecionada){
       setSecaoSelecionada(null);
@@ -44,12 +49,8 @@ function App() {
     <div className={styles.app}>
 
       <Header />
-      {secaoSelecionada ? 
-        <FiltroSecao secoes={secaoSelecionada} onSelecionarSecao={handleSelecionarSecao}/> 
-        :
-        <FiltroSecao secoes={arraySecoes} onSelecionarSecao={handleSelecionarSecao}/>
-      }
-
+      {debug()}
+      <FiltroSecao secoes={arraySecoes} onSelecionarSecao={handleSelecionarSecao}/>
       <main className={styles.main}>
 
         {arraySecoes.map((sec) =>(
