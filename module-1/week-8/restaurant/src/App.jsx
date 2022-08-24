@@ -17,24 +17,24 @@ function App() {
       id: 1,
       nome: 'Entradas', 
       produtos: produtos.entradas, 
-      subSecoes: subSecoesEntradas
+      subSecoes: Array.from(subSecoesEntradas)
     },
     {
       id: 2,
       nome: 'Principais',
       produtos: produtos.principais,
-      subSecoes: subSecoesPrincipais
+      subSecoes: Array.from(subSecoesPrincipais)
     },
     {
       id: 3,
       nome: 'Sobremesas',
       produtos: produtos.sobremesas,
+      subSecoes: null
     }
   ];
 
   const debug = () =>{
-    const findei = Array.from(produtos).find(o => o == 'entradas');
-    console.log(findei);
+    console.log(arraySecoes.find(o => o.nome === 'Principais').nome.toLowerCase());
   }
 
   const handleSelecionarSecao = (nomeSecao) => {
@@ -53,13 +53,21 @@ function App() {
       <FiltroSecao secoes={arraySecoes} onSelecionarSecao={handleSelecionarSecao}/>
       <main className={styles.main}>
 
-        {arraySecoes.map((sec) =>(
-          <Secao 
-          key={sec.id}
-          nome={sec.nome}
-          produtos={sec.produtos}
-          subSecoes={sec.subSecoes ? Array.from(sec.subSecoes) : null}/>
-        ))}
+        {secaoSelecionada === null ?
+          (arraySecoes.map((sec) =>(
+            <Secao 
+            key={sec.id}
+            nome={sec.nome}
+            produtos={sec.produtos}
+            subSecoes={sec.subSecoes ? sec.subSecoes : null}/>
+          ))
+          ) : (
+            <Secao 
+            nome={secaoSelecionada}
+            produtos={arraySecoes.find((sec) => sec.nome === secaoSelecionada).produtos}
+            subSecoes={arraySecoes.find((sec) => sec.nome === secaoSelecionada).subSecoes}/>
+          ) 
+        }
 
       </main>
       <Footer />
