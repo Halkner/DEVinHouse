@@ -33,10 +33,6 @@ function App() {
     }
   ];
 
-  const debug = () =>{
-    console.log(arraySecoes.find(o => o.nome === 'Principais').nome.toLowerCase());
-  }
-
   const handleSelecionarSecao = (nomeSecao) => {
     if(nomeSecao === secaoSelecionada){
       setSecaoSelecionada(null);
@@ -49,7 +45,6 @@ function App() {
     <div className={styles.app}>
 
       <Header />
-      {debug()}
       <FiltroSecao secoes={arraySecoes} onSelecionarSecao={handleSelecionarSecao}/>
       <main className={styles.main}>
 
