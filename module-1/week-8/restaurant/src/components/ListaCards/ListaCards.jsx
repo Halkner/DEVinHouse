@@ -7,16 +7,6 @@ import { useState } from 'react';
 
 export const ListaCards = ({ produtos }) => {
 
-  const [idSelecionados, setIdSelecionados] = useState([]);
-
-  const handleSelecionar = (idSelected) => {
-    if(idSelecionados.includes(idSelected)){
-      setIdSelecionados(idSelecionados.filter((id) => id !== idSelected));
-    }else{
-      setIdSelecionados([...idSelecionados, idSelected]);
-    }
-  }
-
   return(
     <ul className={styles.lista}>
       {produtos.map((produto) => (
@@ -25,7 +15,7 @@ export const ListaCards = ({ produtos }) => {
           produto={produto}
           selecionado={idSelecionados.includes(produto.id)}
           onSelecionar = {() => {
-            handleSelecionar(produto.id);
+            handleSelecionar(produto);
           }} />
         </li>
       ))}

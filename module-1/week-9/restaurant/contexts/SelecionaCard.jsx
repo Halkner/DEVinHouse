@@ -19,12 +19,18 @@ const SelecionaCard = props =>{
     }
 
     const isSelecionado = (cardId) => {
-        if(selecionados.some(id => id == cardId))
+        if(selecionados.some(id => id == cardId)){
+            return "Card está selecionado."
+        }else{
+            return "Card não está selecionado."
+        }
     }
 
     return(
         <AppContext.Provider value={{
-            id: state.id,
+            listaSelecionados: selecionados,
+            selecionaCard: produto => handleSelecionar(produto),
+            estaSelecionado: cardId => isSelecionado(cardId),
         }}>
             {props.children}
         </AppContext.Provider>
