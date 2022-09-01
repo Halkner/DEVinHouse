@@ -2,7 +2,11 @@ import PropTypes from 'prop-types';
 
 import styles from './Card.module.css';
 
+
+const {handleSelecionar, isSelecionado} = useSelect()
+
 export const Card = ({ produto }) => (
+
   <div className={styles.card}>
     <img className={styles.img} alt='Foto do prato' src={produto.img} height={200} />
 

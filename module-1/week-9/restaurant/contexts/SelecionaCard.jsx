@@ -1,11 +1,12 @@
 import React from "react";
 import { useState } from "react";
 
-const AppContext = React.createContext();
+export const AppContext = React.createContext();
 
 const initialState = {
     id: null,
 }
+
 
 const SelecionaCard = props =>{
     const [selecionados, setSelecionados] = useState(initialState)
