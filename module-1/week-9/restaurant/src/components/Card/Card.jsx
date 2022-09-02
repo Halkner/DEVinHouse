@@ -4,8 +4,6 @@ import styles from './Card.module.css';
 
 import {useSelect} from '../../../hooks/useSelect'
 
-import classNames from 'classnames';
-
 export const Card = ({ produto }) => {
 
   const {handleSelecionar, isSelecionado} = useSelect();
@@ -13,7 +11,7 @@ export const Card = ({ produto }) => {
   const estaSelecionado = isSelecionado(produto.id);
 
   return(
-    <div className={classNames('styles.card', {'styles.cardSelecionado':estaSelecionado})}
+    <div className={`${styles.card} ${estaSelecionado && styles.cardSelecionado}`}
     onClick={() => handleSelecionar(produto)}>
       <img className={styles.img} alt='Foto do prato' src={produto.img} height={200} />
 

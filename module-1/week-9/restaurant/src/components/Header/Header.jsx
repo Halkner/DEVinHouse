@@ -1,4 +1,5 @@
 import logo from '@assets/images/logo.jpeg';
+import { Link } from 'react-router-dom';
 
 import styles from './Header.module.css';
 export const Header = () => (
@@ -11,9 +12,12 @@ export const Header = () => (
     <nav>
       <ul className={styles.ul}>
         <li>
-          <a className={styles.link} href='#'>
+          <Link className={styles.link} to='/'>
             Menu
-          </a>
+          </Link>
+          <Link className={styles.link} to='/MinhasEscolhas'>
+            Minhas Escolhas
+          </Link>
         </li>
       </ul>
     </nav>

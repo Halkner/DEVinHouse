@@ -1,34 +1,24 @@
-import { Footer, Header, Secao } from '@components';
-import produtos from '@services/produtos.json';
+import { Footer, Header } from '@components';
 import styles from './App.module.css';
 import SelecionaCard from '../contexts/SelecionaCard'
+import { BrowserRouter } from 'react-router-dom';
+import {Router} from '../routes/Router'
 
 function App() {
-  const subSecoesEntradas = new Set(produtos.entradas.map((p) => p.subSecao));
-  const subSecoesPrincipais = new Set(produtos.principais.map((p) => p.subSecao));
-
   return (
-    <SelecionaCard>
-      <div className={styles.app}>
-        <Header />
-        <main className={styles.main}>
-          <Secao
-            nome='Entradas'
-            produtos={produtos.entradas}
-            subSecoes={Array.from(subSecoesEntradas)}
-          />
+    <BrowserRouter>
+      <SelecionaCard>
+        <div className={styles.app}>
+          <Header />
 
-          <Secao
-            nome='Principais'
-            produtos={produtos.principais}
-            subSecoes={Array.from(subSecoesPrincipais)}
-          />
+          <main className={styles.main}>
+            <Router/>
+          </main>
 
-          <Secao nome='Sobremesas' produtos={produtos.sobremesas} />
-        </main>
-        <Footer />
-      </div>
-    </SelecionaCard>
+          <Footer />
+        </div>
+      </SelecionaCard>
+    </BrowserRouter>
   );
 }
 

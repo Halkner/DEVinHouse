@@ -8,12 +8,11 @@ export const AppContext = React.createContext();
 const SelecionaCard = props =>{
     const [selecionados, setSelecionados] = useState([])
 
-    const isSelecionado = (cardId) => {
-        return selecionados.some(id => id == cardId);
+    const isSelecionado = (id) => {
+        return selecionados.some(prod => prod.id === id);
     }
 
     const handleSelecionar = (card) => {
-        console.log(selecionados)
         if(isSelecionado(card.id)){
         setSelecionados(selecionados.filter((prod) => prod.id !== card.id));
         }else{
@@ -21,8 +20,12 @@ const SelecionaCard = props =>{
         }
     }
 
+    const clearProducts = () =>{
+        setSelecionados([]);
+    }
+
     return(
-        <AppContext.Provider value={{selecionados, handleSelecionar, isSelecionado}}>
+        <AppContext.Provider value={{selecionados, handleSelecionar, isSelecionado, clearProducts}}>
             {props.children}
         </AppContext.Provider>
     )
