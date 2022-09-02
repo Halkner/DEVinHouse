@@ -1,41 +1,36 @@
+import PropTypes from 'prop-types';
+
 import React from "react";
 import { useState } from "react";
 
 export const AppContext = React.createContext();
 
-const initialState = {
-    id: null,
-}
-
-
 const SelecionaCard = props =>{
-    const [selecionados, setSelecionados] = useState(initialState)
-
-    const handleSelecionar = (card) => {
-        if(selecionados.includes(card.id)){
-        setSelecionados(selecionados.filter((id) => id !== card.id));
-        }else{
-        setSelecionados([...selecionados, card.id]);
-        }
-    }
+    const [selecionados, setSelecionados] = useState([])
 
     const isSelecionado = (cardId) => {
-        if(selecionados.some(id => id == cardId)){
-            return "Card está selecionado."
+        return selecionados.some(id => id == cardId);
+    }
+
+    const handleSelecionar = (card) => {
+        console.log(selecionados)
+        if(isSelecionado(card.id)){
+        setSelecionados(selecionados.filter((prod) => prod.id !== card.id));
         }else{
-            return "Card não está selecionado."
+        setSelecionados([...selecionados, card]);
         }
     }
 
     return(
-        <AppContext.Provider value={{
-            listaSelecionados: selecionados,
-            selecionaCard: produto => handleSelecionar(produto),
-            estaSelecionado: cardId => isSelecionado(cardId),
-        }}>
+        <AppContext.Provider value={{selecionados, handleSelecionar, isSelecionado}}>
             {props.children}
         </AppContext.Provider>
     )
+}
+
+
+SelecionaCard.propTypes = {
+    children: PropTypes.node,
 }
 
 export default SelecionaCard;
