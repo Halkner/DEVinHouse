@@ -5,3 +5,11 @@
 .total{
     color: #329404;
 }
+
+.limpaProdutos{
+    color: #329404;
+}
+
+.limpaProdutos:hover{
+    cursor: pointer;
+}
