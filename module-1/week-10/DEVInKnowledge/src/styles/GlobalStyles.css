@@ -1,0 +1,474 @@
+*, *:focus {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: 'Playfair Display', serif;
+    text-decoration: none;
+}
+
+header{
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    max-height: 20vh;
+}
+
+header span, header div{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.open-modal p {
+  background-color: #ffa200;
+  color: #000000;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transform: rotate(-2deg);
+}
+
+.open-modal p:hover{
+    background-color: #fbb337;
+}
+
+.open-modal p:after {
+  content: '';
+  position: absolute;
+  border: 1px solid #000000;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+
+.open-modal p:hover:after {
+  bottom: 2px;
+  left: 2px;
+}
+
+#btn-stats {
+    background-color: #00ddff;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transform: rotate(2deg);
+}
+
+#btn-stats:hover{
+    background-color: #39e5ff;
+}
+  
+#btn-stats:after {
+    content: '';
+    position: absolute;
+    border: 1px solid #000000;
+    bottom: 4px;
+    right: 4px;
+    width: calc(100% - 1px);
+    height: calc(100% - 1px);
+}
+  
+#btn-stats:hover:after {
+    bottom: 2px;
+    right: 2px;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    font-size: 23px;
+}
+
+.logo img{
+    max-width: 400px;
+}
+
+body{
+    background: url("https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80");
+    background-size: cover;
+    height: 100%;
+}
+
+main{
+    width: 100%;
+    min-height: 85vh;
+}
+
+.search-div{
+    margin: 2em auto 0 auto;
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    height: 10vh;
+}
+
+.search-bar{
+    width: 100%;
+    height: 5vh;
+    border: none;
+    border-bottom: 2px solid brown;
+    background-color: transparent;
+    padding: 20px 20px;
+    display: inline;
+    font-size: 3vmin;
+}
+
+.search-btn{
+    max-width: 70%;
+    max-height: 5vh;
+    padding: 0 10px 40px 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid brown;
+}
+
+.search-btn:hover{
+    cursor: pointer;
+}
+
+.search-btn img{
+    margin-top: 0;
+    width: 90%;
+    height: 5vh;
+    transition: all 0.2s;
+}
+
+.search-btn:hover img{
+    transform: scale(1.05);
+}
+
+.modal-form{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 10px;
+    display: none;
+    justify-content: center;
+    z-index: 99999;
+}
+
+.modal-card{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 99999;
+    display: none;
+    justify-content: center;
+}
+
+.modal-card-content{
+    margin: auto auto;
+    width: 40%;
+    background-color: white;
+    height: 80%;
+    position: fixed;
+    top: 10vh;
+    padding: 40px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+#modal-titulo{
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 2em;
+}
+
+#modal-skill{
+    margin-bottom: 1em;
+}
+
+#modal-categoria{
+    margin-bottom: 1em;
+}
+
+#modal-descricao{
+    word-wrap: break-word;
+}
+
+.container-form-add-card{
+    margin: auto auto;
+    width: 27%;
+    min-width: 300px;
+    height: 80vh;
+    min-height: 650px;
+    max-height: 600px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.989);
+    border-radius: 20px;
+    position: relative;
+}
+
+.close-modal{
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: all 0.3s;
+    position: absolute;
+    padding: 0 10px;
+    right: 20px;
+    border-radius: 50px;
+}
+
+.close-modal:hover, .close-modal:focus{
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+
+
+.pin-container{
+    max-height: 10vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.pin-container img{
+    width: 15%;
+    height: 15%;
+}
+
+.container-form-add-card h1{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.form-add-card{
+    margin-left: 1.5em;
+    margin-top: 2em;
+    height: 100%;
+}
+
+.form-add-card input{
+    width: 86.5%;
+    height: 2em;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+select{
+    width: 95%;
+    height: 2em;
+}
+
+label{
+    display: block;
+    margin-top: 1em;
+}
+
+.form-add-card textarea{
+    width: 94%;
+    height: 20vh;
+    min-height: 100px;
+    max-height: 150px ;
+    resize: none;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.form-add-card-button{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-add-card > *:not(label):not(div){
+    border-style: dashed;
+    transition: all 1s;
+    background-color: rgba(245, 245, 220, 0.46);
+}
+
+.form-add-card > *:not(label):not(div):hover{
+    transform: scale(1.02);
+}
+
+.form-add-card-button > button{
+    width: 9vw;
+    min-width: 100px;
+    height: 2em;
+    border-radius: 50px;
+    transition: all 0.4s;
+    margin-top: 5vh;
+}
+
+.form-add-card-button > button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.btn-salvar{
+    border: 1px solid #03b476;
+    background-color: transparent;
+}
+
+.btn-salvar:hover{
+    background-color: #03b476;
+    color: white;
+}
+
+.btn-limpar{
+    border: 1px solid #BF4E30;
+    background-color: transparent;
+}
+
+.btn-limpar:hover{
+    background-color:#BF4E30;
+    color: rgb(255, 255, 255);
+}
+
+.cards-container{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 3em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card{
+    margin: 1.5em 2.5em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    min-width: 300px;
+    width: 25%;
+    min-height: 100px;
+    height: 50vh;
+    max-height: 300px;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(245, 245, 245) 35%);
+    border-radius: 10px;
+    display: inline-block;
+    position: relative;
+    text-align: start;
+    transition: all 0.5s;
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.card:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    transform: rotate(1deg);
+}
+
+.card h1{
+    font-size: 16px;
+    margin-top: 1em;
+    text-align: center;
+}
+
+.card p{
+    margin: 1.5em 1em 0 1em;
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+.descricao{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 90%;
+    word-wrap: break-word;
+    height: 15vh;
+    margin: 0 auto;
+    font-size: 12px;
+}
+
+
+.btn-remove-card{
+    position: absolute;
+    display: inline;
+    bottom: 10px;
+    right: 100px;
+    width: 8%;
+}
+
+.btn-remove-card img{
+    width: 100%;
+    transition: all 1s;
+}
+
+.btn-edit-card{
+    position: absolute;
+    display: inline;
+    width: 7%;
+    bottom: 10px;
+    right: 25px;
+}
+
+.btn-edit-card img{
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.btn-edit-card img:hover, .btn-remove-card img:hover, .btn-video img:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.btn-video{
+    position: absolute;
+    display: inline;
+    bottom: 10px;
+    left: 25px;
+    width: 8%;
+}
+
+.btn-video img{
+    width: 100%;
+    transition: all 0.3s;
+}
+
+footer{
+    width: 100%;
+    height: 20vh;
+    background-color: white;
+    border-top: 1px solid brown;
+    margin-top: 4em;
+}
+
+.stats{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.stats div{
+    width: 15%;
+    height: 90%;
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.p-stats-name{
+    margin-top: 1em;
+}
+
+.p-stats-number{
+    margin-top: 8px;
+    font-size: 40px;
+}
+
+@media (min-width: 768px) {
+    #btn-stats {
+      padding: .75rem 3rem;
+      font-size: 1.25rem;
+    }
+
+    .open-modal p {
+        padding: .75rem 3rem;
+        font-size: 1.25rem;
+      }
+  }
