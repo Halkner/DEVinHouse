@@ -11,6 +11,7 @@ header{
     display: flex;
     justify-content: space-between;
     max-height: 20vh;
+    width: 100%;
 }
 
 header span, header div{
@@ -89,12 +90,11 @@ header span, header div{
 body{
     background: url("https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80");
     background-size: cover;
-    height: 100%;
 }
 
 main{
     width: 100%;
-    min-height: 85vh;
+    min-height: 45vh;
 }
 
 .search-div{
@@ -360,7 +360,7 @@ label{
     transform: rotate(1deg);
 }
 
-.card h1{
+.card-title{
     font-size: 16px;
     margin-top: 1em;
     text-align: center;
@@ -372,14 +372,15 @@ label{
     text-transform: capitalize;
 }
 
-.descricao{
-    text-overflow: ellipsis;
+.description{ 
+    white-space: nowrap;
     overflow: hidden;
     width: 90%;
     word-wrap: break-word;
-    height: 15vh;
-    margin: 0 auto;
+    height: 20vh;
     font-size: 12px;
+    text-overflow: ellipsis;
+    margin: 1.5em 1em 0 1em;
 }
 
 
@@ -425,6 +426,14 @@ label{
 .btn-video img{
     width: 100%;
     transition: all 0.3s;
+}
+
+footer{
+    width: 100%;
+    height: 20vh;
+    background-color: white;
+    border-top: 1px solid brown;
+    margin-top: 4em;
 }
 
 .stats{
