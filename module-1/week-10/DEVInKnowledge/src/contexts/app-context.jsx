@@ -3,7 +3,14 @@ import { useContext } from "react";
 
 const Context = React.createContext();
 
-const AppContext = props => {
+export const useAppContext = () => {
+    const context = useContext(Context);
+
+    return context;
+}
+
+
+export const AppContext = props => {
     return(
         <Context.Provider value={"Conectado!"}>
             {props.children}
@@ -11,5 +18,3 @@ const AppContext = props => {
     )
 }
 
-const useAppContext = useContext(Context);
-export {useAppContext, AppContext};

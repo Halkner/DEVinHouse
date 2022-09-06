@@ -1,9 +1,12 @@
 import React from "react"
+import { useAppContext } from "../../contexts/app-context"
 import { CardList } from "../CardList/CardList"
 import { Filter } from "../Filter/Filter"
 import { TipCard } from "../TipCard/TipCard"
 
 export const MainContent = () => {
+    const result = useAppContext();
+    console.log(result);
     return(
         <React.Fragment>
             <main>
