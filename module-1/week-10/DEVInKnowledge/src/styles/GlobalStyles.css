@@ -146,7 +146,7 @@ main{
     height: 100%;
     position: absolute;
     top: 10px;
-    display: none;
+    display: FIXED;
     justify-content: center;
     z-index: 99999;
 }
@@ -357,7 +357,7 @@ label{
 .card:hover{
     cursor: pointer;
     transform: scale(1.05);
-    transform: rotate(1deg);
+    transform: rotate(0.3deg);
 }
 
 .card-title{
@@ -373,12 +373,12 @@ label{
 }
 
 .description{ 
-    white-space: nowrap;
     overflow: hidden;
     width: 90%;
     word-wrap: break-word;
-    height: 20vh;
+    height: 115px;
     font-size: 12px;
+    line-height: 16px;
     text-overflow: ellipsis;
     margin: 1.5em 1em 0 1em;
 }
