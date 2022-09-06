@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
 
-export const TipCard = (props) => {
+export const TipCard = (title, langSkill, category, description, videoUrl) => {
     return (
         <div className="card">
-            <h1 className="card-title">{props.title}</h1>
-            <p className="card-lang-skill">Linguagem/Skill: {props.langSkill}</p>
-            <p className="card-category">Categoria: {props.category}</p>
-            <div className="description">Descrição: {props.description}</div>
+            <h1 className="card-title">{title}</h1>
+            <p className="card-lang-skill">Linguagem/Skill: {langSkill}</p>
+            <p className="card-category">Categoria: {category}</p>
+            <div className="description">Descrição: {description}</div>
 
             <span className="btn-video">
-                <a href={props.videoUrl} target="_blank">
+                <a href={videoUrl} target="_blank">
                     <img src="../src/assets/video.png" alt="Show video" />
                 </a>
             </span>

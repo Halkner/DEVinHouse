@@ -1,8 +1,20 @@
+import { useState } from 'react';
 import {useForm} from 'react-hook-form';
 
-export const Sidebar = () => {
 
-    const { register, handleSubmit, formState: {errors} } = useForm()
+const [modalIsOpen, setIsOpen] = useState(false);
+
+export const openModal = () => {
+    setIsOpen(true);
+}
+
+const closeModal = () => {
+    setIsOpen(false);
+}
+
+export const Modal = () => {
+
+    const { register, handleSubmit } = useForm()
 
     const handleCreateTip = (data) => {
         return console.log(data);
@@ -28,7 +40,7 @@ export const Sidebar = () => {
                         <option value=""></option>
                         <option value="front-end">Front-End</option>
                         <option value="back-end">Back-End</option>
-                        <option value="fullstack">FullStack</option>
+                        <option value="fullstack">Full Stack</option>
                         <option value="soft">Comportamental/Soft</option>
                     </select>
 

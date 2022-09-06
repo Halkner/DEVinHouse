@@ -5,8 +5,7 @@ import { Filter } from "../Filter/Filter"
 import { TipCard } from "../TipCard/TipCard"
 
 export const MainContent = () => {
-    const result = useAppContext();
-    console.log(result);
+    const {tips} = useAppContext();
     return(
         <React.Fragment>
             <main>
@@ -22,7 +21,14 @@ export const MainContent = () => {
 
                 <Filter/>
                 <CardList>
-                    <TipCard title="Arrays" langSkill="Python" category="Full Stack" description="Nulla dolore labore mollit do ad adipisicing laborum ex culpa dolore.Mollit commodo quis commodo quis veniam veniam quis mollit aute ipsum aliqua elit aliqua.Minim cupidatat anim proident culpa ipsum fugiat laborum cillum cillum eiusmod ipsum.Cupidatat ullamco esse voluptate incididunt eiusmod eiusmod.Quis nostrud sit laborum eiusmod ipsum aliqua adipisicing duis exercitation officia et.Qui duis aliqua ad occaecat sunt sunt nulla Lorem voluptate et.Consequat excepteur aliqua irure est aliquip fugiat ullamco magna do et.Excepteur sint fugiat voluptate exercitation adipisicing adipisicing non exercitation.Aliqua ea proident deserunt quis.Laboris officia cillum non tempor exercitation occaecat proident labore cillum minim."/>
+                    {tips.map((tip) => (
+                        <TipCard 
+                        title={tip.title} 
+                        langSkill={tip.langSkill}
+                        category={tip.category}
+                        description={tip.description}
+                        videoUrl={tip.videoUrl}/>
+                    ))}
                 </CardList>
             </main>
         </React.Fragment>

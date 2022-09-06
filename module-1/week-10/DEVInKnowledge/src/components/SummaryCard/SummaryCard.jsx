@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 
-export const SummaryCard = (props) => {
+export const SummaryCard = ({title, count}) => {
     return(
         <div>
-            <p className="p-stats-name">{props.title}</p>
-            <p className="p-stats-number" id="stats-total">{props.count}</p>
+            <p className="p-stats-name">{title}</p>
+            <p className="p-stats-number" id="stats-total">{count}</p>
         </div>
     )
 }
