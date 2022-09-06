@@ -146,7 +146,7 @@ main{
     height: 100%;
     position: absolute;
     top: 10px;
-    display: FIXED;
+    display: none;
     justify-content: center;
     z-index: 99999;
 }

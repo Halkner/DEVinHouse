@@ -1,10 +1,13 @@
+import { AppContext } from "./contexts/app-context"
 import { Home } from "./pages/Home"
 
 function App() {
 
   return (
     <div className="App">
-      <Home/>
+      <AppContext>
+        <Home/>
+      </AppContext>
     </div>
   )
 }

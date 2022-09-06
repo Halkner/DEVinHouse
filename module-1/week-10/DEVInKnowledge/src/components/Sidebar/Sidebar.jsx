@@ -2,7 +2,7 @@ import {useForm} from 'react-hook-form';
 
 export const Sidebar = () => {
 
-    const { register, handleSubmit, formState: {erros} } = useForm()
+    const { register, handleSubmit, formState: {errors} } = useForm()
 
     const handleCreateTip = (data) => {
         return console.log(data);
@@ -15,6 +15,7 @@ export const Sidebar = () => {
 
                 <div className="pin-container"><img src="../src/assets/pin.png" alt="alfinete"/></div>
                 <h1>Adicionar novo card</h1>
+
                 <form className="form-add-card" onSubmit={handleSubmit(handleCreateTip)}>
                     <label htmlFor="titulo">Título</label>
                     <input type="text" name="titulo" id="titulo" minLength="8" maxLength="64" {...register("titulo")} required />
@@ -36,6 +37,7 @@ export const Sidebar = () => {
 
                     <label htmlFor="video-url">Vídeo</label>
                     <input type="url" name="video-url" id="video-url" {...register("video-url")} />
+                    
                     <div className="form-buttons-container">
                         <div className="form-add-card-button">
                             <button className="btn-salvar" id="btn-salvar" type="submit">Salvar</button>
