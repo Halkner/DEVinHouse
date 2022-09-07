@@ -16,7 +16,7 @@ export const AppContext = props => {
     const [filter, setFilter] = useState(null)
 
     const createTip = (data) => {
-        setAllTips(...allTips, data)
+        setAllTips([...allTips, data])
     }
 
     const filterTips = (query) => {
@@ -28,22 +28,37 @@ export const AppContext = props => {
     }
 
     const tips = filter 
-    ? allTips.filter((tip) => tip.titulo.includes(filter)) 
+    ? allTips.filter((tip) => tip.title.includes(filter)) 
     : allTips;
 
     const sortByCategory = () => {
         const categories = ["Front-End","Back-End","Full Stack","Comportamental/Soft"];
-        console.log(categories);
         return categories.map((catName) => {
-          const count = allTips.filter((tip) => tip.categoria == catName).length;
+          const count = allTips.filter((tip) => tip.category == catName).length;
           return { title: catName, count: count };
         });
     };
 
     const categories = sortByCategory();
 
+    const [modalIsOpen, setIsOpen] = useState(false);
+
+    const openModal = () => {
+        setIsOpen(true);
+    }
+    
+    const closeModal = () => {
+        setIsOpen(false);
+    }
+
+    const [openStats, setOpenStats] = useState(false);
+
+    const toggleStatsBtn = () => {
+        setOpenStats(!openStats);
+    }
+
     return(
-        <Context.Provider value={{createTip, filterTips, tips, categories}}>
+        <Context.Provider value={{createTip, filterTips, tips, categories, openModal, closeModal, modalIsOpen, toggleStatsBtn, openStats}}>
             {props.children}
         </Context.Provider>
     )

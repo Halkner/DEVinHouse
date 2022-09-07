@@ -1,42 +1,34 @@
-import { useState } from 'react';
 import {useForm} from 'react-hook-form';
-
-
-const [modalIsOpen, setIsOpen] = useState(false);
-
-export const openModal = () => {
-    setIsOpen(true);
-}
-
-const closeModal = () => {
-    setIsOpen(false);
-}
+import { useAppContext } from '../../contexts/app-context';
+import styles from './Modal.module.css'
 
 export const Modal = () => {
 
     const { register, handleSubmit } = useForm()
 
+    const {modalIsOpen, closeModal, createTip} = useAppContext()
+
     const handleCreateTip = (data) => {
-        return console.log(data);
+        createTip(data);
     }
-
+    
     return(
-        <div className="modal-form">
-            <div className="container-form-add-card">
-                <span className="close-modal">&times;</span>
+        <div className={`${modalIsOpen ? styles.openedModalForm : styles.modalForm}`}>
+            <div className={styles.containerFormAddCard}>
+                <span className="closeModal" onClick={() => closeModal()}>&times;</span>
 
-                <div className="pin-container"><img src="../src/assets/pin.png" alt="alfinete"/></div>
+                <div className={styles.pinContainer}><img src="../src/assets/pin.png" alt="alfinete"/></div>
                 <h1>Adicionar novo card</h1>
 
-                <form className="form-add-card" onSubmit={handleSubmit(handleCreateTip)}>
-                    <label htmlFor="titulo">Título</label>
-                    <input type="text" name="titulo" id="titulo" minLength="8" maxLength="64" {...register("titulo")} required />
+                <form className={styles.formAddCard} onSubmit={handleSubmit(handleCreateTip)}>
+                    <label htmlFor="title">Título</label>
+                    <input type="text" name="title" minLength="8" maxLength="64" {...register("title")} required />
 
-                    <label htmlFor="lang-skill">Linguagem/Skill</label>
-                    <input type="text" name="lang-skill" id="lang-skill" minLength="4" maxLength="16" {...register("lang-skill")}  required />
+                    <label htmlFor="langSkill">Linguagem/Skill</label>
+                    <input type="text" name="langSkill" minLength="4" maxLength="16" {...register("langSkill")}  required />
 
-                    <label htmlFor="select-categoria">Categoria</label>
-                    <select name="categoria" id="select-categoria" {...register("categoria")}  required>
+                    <label htmlFor="category">Categoria</label>
+                    <select name="category" {...register("category")}  required>
                         <option value=""></option>
                         <option value="front-end">Front-End</option>
                         <option value="back-end">Back-End</option>
@@ -44,16 +36,16 @@ export const Modal = () => {
                         <option value="soft">Comportamental/Soft</option>
                     </select>
 
-                    <label htmlFor="descricao">Descrição</label>
-                    <textarea name="descricao" id="descricao" minLength="32" maxLength="512" {...register("descricao")} required></textarea>
+                    <label htmlFor="description">Descrição</label>
+                    <textarea name="description" minLength="32" maxLength="512" {...register("description")} required></textarea>
 
-                    <label htmlFor="video-url">Vídeo</label>
-                    <input type="url" name="video-url" id="video-url" {...register("video-url")} />
+                    <label htmlFor="videoUrl">Vídeo</label>
+                    <input type="url" name="videoUrl" {...register("videoUrl")} />
                     
-                    <div className="form-buttons-container">
-                        <div className="form-add-card-button">
-                            <button className="btn-salvar" id="btn-salvar" type="submit">Salvar</button>
-                            <button className="btn-limpar">Limpar</button>
+                    <div className={styles.formButtonsContainer}>
+                        <div className={styles.formAddCardButton}>
+                            <button className={styles.btnSalvar} type="submit">Salvar</button>
+                            <button className={styles.btnLimpar}>Limpar</button>
                         </div>
                     </div>
                 </form>

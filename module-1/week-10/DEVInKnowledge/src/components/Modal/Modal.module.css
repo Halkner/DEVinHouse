@@ -1,0 +1,121 @@
+.modalForm{
+    display: none;
+}
+
+.openedModalForm{
+    width: 100%;
+    position: absolute;
+    display: fixed;
+    justify-content: center;
+    z-index: 99999;
+}
+
+.containerFormAddCard{
+    margin: auto auto;
+    width: 27%;
+    min-width: 300px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.989);
+    border-radius: 20px;
+    position: relative;
+}
+
+.pinContainer{
+    max-height: 10vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.pinContainer img{
+    width: 15%;
+    height: 15%;
+}
+
+.containerFormAddCard h1{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.formAddCard{
+    margin-left: 1.5em;
+    margin-top: 2em;
+    height: 100%;
+}
+
+.formAddCard input{
+    width: 86.5%;
+    height: 2em;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+select{
+    width: 95%;
+    height: 2em;
+}
+
+label{
+    display: block;
+    margin-top: 1em;
+}
+
+.formAddCard textarea{
+    width: 94%;
+    height: 20vh;
+    min-height: 100px;
+    max-height: 150px ;
+    resize: none;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.formAddCardButton{
+    display: flex;
+    justify-content: space-between;
+}
+
+.formAddCard > *:not(label):not(div){
+    border-style: dashed;
+    transition: all 1s;
+    background-color: rgba(245, 245, 220, 0.46);
+}
+
+.formAddCard > *:not(label):not(div):hover{
+    border-color: rgb(255, 51, 51);
+}
+
+.formAddCardButton > button{
+    width: 9vw;
+    min-width: 100px;
+    height: 2em;
+    border-radius: 50px;
+    transition: all 0.4s;
+    margin-top: 5vh;
+}
+
+.formAddCardButton > button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.btnSalvar{
+    border: 1px solid #03b476;
+    background-color: transparent;
+}
+
+.btnSalvar:hover{
+    background-color: #03b476;
+    color: white;
+}
+
+.btnLimpar{
+    border: 1px solid #BF4E30;
+    background-color: transparent;
+}
+
+.btnLimpar:hover{
+    background-color:#BF4E30;
+    color: rgb(255, 255, 255);
+}

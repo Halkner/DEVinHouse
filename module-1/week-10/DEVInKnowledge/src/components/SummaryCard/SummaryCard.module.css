@@ -1,0 +1,17 @@
+.cardStats{
+    width: 15%;
+    height: 100%;
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.pStatsName{
+    margin-top: 1em;
+}
+
+.pStatsNumber{
+    margin-top: 8px;
+    font-size: 40px;
+}

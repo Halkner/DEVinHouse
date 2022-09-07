@@ -1,17 +1,24 @@
 import { useAppContext } from "../../contexts/app-context"
 import { SummaryCard } from "../SummaryCard/SummaryCard"
+import styles from './Summary.module.css'
 
 export const Summary = () => {
 
-    const {categories} = useAppContext();
+    const {categories, openStats} = useAppContext();
 
     return(
-        <footer id="footer">
-            <div className="stats" id="stats">
-                {categories.map((category, index) => (
-                    <SummaryCard key={index} title={category.title} count={category.count}/>
-                ))}
-            </div>
-        </footer>
+        <>
+            {openStats ? 
+                <div className={styles.statsContainer}>
+                    <div className={styles.stats}>
+                        {categories.map((category, index) => (
+                            <SummaryCard key={index} title={category.title} count={category.count}/>
+                        ))}
+                    </div>
+                </div>
+            :
+                ""
+            }
+        </>
     )
 }

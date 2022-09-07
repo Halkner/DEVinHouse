@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
+import styles from './SummaryCard.module.css'
 
 export const SummaryCard = ({title, count}) => {
     return(
-        <div>
-            <p className="p-stats-name">{title}</p>
-            <p className="p-stats-number" id="stats-total">{count}</p>
+        <div className={styles.cardStats}>
+            <p className={styles.pStatsName}>{title}</p>
+            <p className={styles.pStatsNumber}>{count}</p>
         </div>
     )
 }
