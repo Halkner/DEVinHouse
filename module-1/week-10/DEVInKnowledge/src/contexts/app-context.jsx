@@ -12,11 +12,22 @@ export const useAppContext = () => {
 
 export const AppContext = props => {
 
-    const [allTips, setAllTips] = useState([]);
+    const [allTips, setAllTips] = useState([
+        {
+            id: 0,
+            title: "Array/Lists",
+            langSkill: "Python",
+            category: "Back-End",
+            description: "Nostrud proident ut consectetur amet cillum.Irure qui eiusmod ipsum aute non.Proident dolore Lorem labore ullamco irure nisi do elit proident ut excepteur qui ut.Pariatur incididunt pariatur est irure consequat non nostrud laboris minim laborum dolor.Anim enim nisi irure occaecat duis duis.",
+            videoUrl: "https://cssgradient.io/",
+        },
+    ]);
     const [filter, setFilter] = useState(null)
 
     const createTip = (data) => {
-        setAllTips([...allTips, data])
+
+        const trueData = {...data, id: allTips.length}
+        setAllTips([...allTips, trueData])   
     }
 
     const filterTips = (query) => {
@@ -30,6 +41,10 @@ export const AppContext = props => {
     const tips = filter 
     ? allTips.filter((tip) => tip.title.includes(filter)) 
     : allTips;
+
+    const removeCard = (id) => {
+        setAllTips(allTips.filter((card) => card.id !== id));
+    }
 
     const sortByCategory = () => {
         const categories = ["Front-End","Back-End","Full Stack","Comportamental/Soft"];
@@ -46,10 +61,17 @@ export const AppContext = props => {
     const openModal = () => {
         setIsOpen(true);
     }
-    
-    const closeModal = () => {
-        setIsOpen(false);
+
+    const [statusEditModal, setStatusEditModal] = useState(false);
+
+    const editModal = () => {
+        setOpenEditModal(true)
     }
+
+    const closeModal = () => {
+        modalIsOpen ? setIsOpen(false) : setStatusEditModal(false);
+    }
+
 
     const [openStats, setOpenStats] = useState(false);
 
@@ -58,7 +80,7 @@ export const AppContext = props => {
     }
 
     return(
-        <Context.Provider value={{createTip, filterTips, tips, categories, openModal, closeModal, modalIsOpen, toggleStatsBtn, openStats}}>
+        <Context.Provider value={{createTip, filterTips, tips, categories, openModal, closeModal, modalIsOpen, toggleStatsBtn, openStats, removeCard, editModal}}>
             {props.children}
         </Context.Provider>
     )

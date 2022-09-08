@@ -1,7 +1,11 @@
 import PropTypes from 'prop-types';
 import styles from './TipCard.module.css'
+import { useAppContext } from "../../contexts/app-context"
 
-export const TipCard = ({title, langSkill, category, description, videoUrl}) => {
+export const TipCard = ({id, title, langSkill, category, description, videoUrl}) => {
+
+    const {removeCard, editModal} = useAppContext();
+ 
     return (
         <div className={styles.card}>
             <h1 className={styles.cardTitle}>{title}</h1>
@@ -18,11 +22,11 @@ export const TipCard = ({title, langSkill, category, description, videoUrl}) => 
                 : ""}
 
             <span className={styles.btnRemoveCard}>
-                <img src="../src/assets/trash.png" alt="Remove card" />
+                <img src="../src/assets/trash.png" alt="Remove card" onClick={() => removeCard(id)}/>
             </span>
 
             <span className={styles.btnEditCard}>
-                <img src="../src/assets/edit.png" alt="Edit card" />
+                <img src="../src/assets/edit.png" alt="Edit card" onClick={() => editModal(id)}/>
             </span>
         </div>
     )

@@ -14,6 +14,7 @@ export const MainContent = () => {
                     {tips.map((tip, index) => (
                         <TipCard
                         key={index}
+                        id={tip.id}
                         title={tip.title} 
                         langSkill={tip.langSkill}
                         category={tip.category}
