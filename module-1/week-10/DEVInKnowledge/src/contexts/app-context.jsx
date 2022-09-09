@@ -62,12 +62,6 @@ export const AppContext = props => {
         setIsOpen(true);
     }
 
-    const [statusEditModal, setStatusEditModal] = useState(false);
-
-    const editModal = () => {
-        setOpenEditModal(true)
-    }
-
     const closeModal = () => {
         modalIsOpen ? setIsOpen(false) : setStatusEditModal(false);
     }
@@ -80,7 +74,7 @@ export const AppContext = props => {
     }
 
     return(
-        <Context.Provider value={{createTip, filterTips, tips, categories, openModal, closeModal, modalIsOpen, toggleStatsBtn, openStats, removeCard, editModal}}>
+        <Context.Provider value={{createTip, filterTips, tips, categories, openModal, closeModal, modalIsOpen, toggleStatsBtn, openStats, removeCard}}>
             {props.children}
         </Context.Provider>
     )
