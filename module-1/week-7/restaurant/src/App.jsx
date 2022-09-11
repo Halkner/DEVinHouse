@@ -3,7 +3,6 @@ import { Header } from './components/Header/Header';
 import { Secoes } from './components/Secoes/Secoes';
 import produtos from './services/produtos.json';
 import './App.css';
-import { array } from 'prop-types';
 
 function App() {
   const subSecoesPrincipais = new Set(produtos.principais.map((sub) => sub.subSecao));

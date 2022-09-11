@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "iniciaisNome": "TB",
+        "nome": "Thais Bertoldo",
+        "descricao": "Desenvolvedora de software JavaScript",
+        "seguindo": false 
+    },
+    {
+        "id": 2,
+        "iniciaisNome": "JF",
+        "nome": "Jaderson Farias",
+        "descricao": "Desenvolvedor de software Ruby",
+        "seguindo": false 
+    },
+    {
+        "id": 3,
+        "iniciaisNome": "CME",
+        "nome": "Cristiana Mariano Elias",
+        "descricao": "UI/UX Designer",
+        "seguindo": false 
+    },
+    {
+        "id": 4,
+        "iniciaisNome": "MAM",
+        "nome": "Matheus Adriano Martins",
+        "descricao": "Desenvolvedor de software Python",
+        "seguindo": false 
+    },
+    {
+        "id": 5,
+        "iniciaisNome": "GMO",
+        "nome": "Geovany Mendonça de Oliveira",
+        "descricao": "Engenheiro Civil",
+        "seguindo": false 
+    },
+    {
+        "id": 6,
+        "iniciaisNome": "LAM",
+        "nome": "Luiz Adriano Martins",
+        "descricao": "Soldador",
+        "seguindo": false 
+    },
+    {
+        "id": 7,
+        "iniciaisNome": "ALF",
+        "nome": "Andreia Luzia Fernandes",
+        "descricao": "Costureira",
+        "seguindo": false 
+    }
+]
