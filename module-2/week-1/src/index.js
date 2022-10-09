@@ -43,11 +43,22 @@ const pizzas = [
 ];
 
 app.get('/pizzas', (request, response) =>{
-    return response.json(pizzas);
+
+    const nameQuery = request.query.name || "";
+
+    const filteredPizzas = pizzas.filter(pizza => pizza.name.toLowerCase().includes(nameQuery.toLowerCase()));
+
+    return response.json(filteredPizzas);
 })
 
 app.post('/pizzas', (request, response) => {
     const {name, description, price, ingredients} = request.body;
+
+    const pizzaExists = pizzas.find(pizza => pizza.name === name);
+
+    if(pizzaExists){
+        return response.status(401).json({error: 'Pizza já se encontra cadastrada!'});
+    }
 
     const newPizza = {
         id: uuidv4(),
