@@ -1,11 +1,11 @@
-const { response } = require('express');
+const { response, request } = require('express');
 const express = require('express');
 const {v4: uuidv4} = require('uuid');
 
 const app = express();
 app.use(express.json());
 
-const pizzas = [
+let pizzas = [
     {
         id: uuidv4(),
         name: "Pepperoni",
@@ -75,6 +75,23 @@ app.post('/pizzas', (request, response) => {
 })
 
 
+app.delete('/pizzas/:id', (request, response) => {
+    const {id} = request.params;
+
+    const selectedPizza = pizzas.find(pizza => pizza.id === id);
+
+    if (!selectedPizza){
+        return response.status(404).json({error: "Pizza não encontrada!"})
+    }
+    
+    const filteredPizzas = pizzas.filter(pizza => pizza.id != id);
+
+    pizzas = [...filteredPizzas];
+
+    return response.status(200).json({success: 'Pizza removida!'});
+
+})
+
 // Orders
 
 let orders = [
@@ -138,6 +155,23 @@ app.get('/orders/:id', (request, response) => {
     }
 
     return response.status(404).json({error: "Pedido não encontrado!"})
+})
+
+app.delete('/orders/:id', (request, response) => {
+    const {id} = request.params;
+
+    const selectedOrder = orders.find(order => order.id === id);
+
+    if (!selectedOrder){
+        return response.status(404).json({error: "Pedido não encontrado!"})
+    }
+    
+    const filteredOrders = orders.filter(order => order.id != id);
+
+    orders = [...filteredOrders];
+
+    return response.status(200).json({success: 'Pedido removido!'});
+
 })
 
 app.listen(3000, () => {
