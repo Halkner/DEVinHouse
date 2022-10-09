@@ -127,6 +127,19 @@ app.post('/orders', (request, response) => {
     return response.status(201).json(newOrder);
 })
 
+
+app.get('/orders/:id', (request, response) => {
+    const {id} = request.params;
+
+    const selectedOrder = orders.find(order => order.id === id);
+
+    if (selectedOrder){
+        return response.status(200).json(selectedOrder);
+    }
+
+    return response.status(404).json({error: "Pedido não encontrado!"})
+})
+
 app.listen(3000, () => {
     console.log('Server started! 🚀')
 });
