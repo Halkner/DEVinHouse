@@ -27,11 +27,6 @@ body {
 	line-height: 1;
 }
 
-#root{
-	display: flex;
-	width: 100vw;
-	justify-content: center;
-}
 ol, ul {
 	list-style: none;
 }

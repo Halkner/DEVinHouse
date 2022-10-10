@@ -1,8 +1,12 @@
-import { OrderForm } from "./components/OrderForm/OrderForm"
+import { MainContent } from "./components/MainContent/MainContent"
+import { Topbar } from "./components/Topbar/Topbar"
 
 function App() {
   return (
-      <OrderForm/>
+    <>
+      <Topbar/>
+      <MainContent/>
+    </>
   )
 }
 
