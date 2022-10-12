@@ -1,10 +1,17 @@
-import { OrderForm } from "../OrderForm/OrderForm"
-import { StyledMain } from "./styles"
+import { OrderForm } from "../OrderForm/OrderForm";
+import {useModal} from "../../contexts/ModalContext/useModal";
+import { StyledMain } from "./styles";
 
 export const MainContent = () => { 
+    const {ModalIsOpen} = useModal();
     return(
-        <StyledMain>
-            <OrderForm/>
-        </StyledMain>
+        <>
+            {ModalIsOpen ? <OrderForm/> : ""}
+            <StyledMain>
+
+                <button></button>
+                
+            </StyledMain>
+        </>
     )
 }
