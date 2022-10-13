@@ -1,13 +1,8 @@
-import { MainContent } from "./components/MainContent/MainContent"
-import { Topbar } from "./components/Topbar/Topbar"
-import { ModalProvider } from "./contexts/ModalContext/ModalProvider"
+import { Home } from "./components/pages/Home/Home"
 
 function App() {
   return (
-    <ModalProvider>
-      <Topbar/>
-      <MainContent/>
-    </ModalProvider>
+    <Home/>
   )
 }
 

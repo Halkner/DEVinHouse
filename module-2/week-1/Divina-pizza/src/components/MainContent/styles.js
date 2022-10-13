@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
 export const StyledMain = styled.main`
-    width: 100%;
     background-color: black;
+    grid-column: 2/2;
 `
 
+export const StyledBtnContainer = styled.div`
+    width: 100%;
+
+`
