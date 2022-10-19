@@ -1,16 +1,25 @@
 import { OrderForm } from "../OrderForm/OrderForm";
 import {useModal} from "../../contexts/ModalContext/useModal";
-import { StyledBtnContainer, StyledMain } from "./styles";
+import { StyledBtnContainer, StyledMain, StyledAllOrdersContainer } from "./styles";
+import { OrderCard } from "../OrderCard/OrderCard";
 
 export const MainContent = () => { 
-    const {ModalIsOpen} = useModal();
+    const {ModalIsOpen, SetModalIsOpen} = useModal();
     return(
         <>
             {ModalIsOpen ? <OrderForm/> : ""}
             <StyledMain>
                 <StyledBtnContainer>
-                    <button>Novo Pedido</button>
+                    <div>
+                        <button className="btn-new-order" onClick={SetModalIsOpen}>Novo Pedido</button>
+                    </div>
+                    <div>
+                        <button className="btn-show-pizzas">Mostrar Pizzas</button>
+                    </div>
                 </StyledBtnContainer>
+                <StyledAllOrdersContainer>
+                    <OrderCard/>
+                </StyledAllOrdersContainer>
             </StyledMain>
         </>
     )

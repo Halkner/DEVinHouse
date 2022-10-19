@@ -1,8 +1,13 @@
 import { Home } from "./components/pages/Home/Home"
+import { ModalProvider } from "./contexts/ModalContext/ModalProvider";
+import { GlobalStyles } from "./styles/GlobalStyles";
 
 function App() {
   return (
-    <Home/>
+    <ModalProvider>
+      <GlobalStyles/>
+      <Home/>
+    </ModalProvider>
   )
 }
 
