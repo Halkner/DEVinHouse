@@ -1,9 +1,41 @@
 import styled from 'styled-components';
 
-export const StyledForm = styled.main`
+export const ModalOverlay = styled.div`
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+`
+
+export const StyledFormContainer = styled.div`
+    width: 30%;
+    height: 80%;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    span{
+        font-size: 20px;
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        cursor: pointer;
+    }
+
+    span:hover{
+        color: red;
+    }
+`
+
+export const StyledForm = styled.div`
         margin-top: 4em;
-        width: 40%;
-        height: 100%;
+        width: 60%;
         display: flex;
         flex-direction: column;
     

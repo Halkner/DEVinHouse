@@ -18,7 +18,6 @@ export const StyledBtnContainer = styled.div`
         height: 40px;
         cursor: pointer;
         border-radius: 5px;
-        font-weight: bold;
         transition: all 0.1s;
         margin-bottom: 10px;
     }
@@ -28,11 +27,11 @@ export const StyledBtnContainer = styled.div`
     }
 
     .btn-new-order{
-        background-color: rgb(0, 255, 0);
+        background-color: #4CAF50;
     }
 
     .btn-show-pizzas{
-        background-color: rgba(255, 195, 0);
+        background-color: rgba(255, 145, 0, 0.8);
     }
 `
 
