@@ -1,26 +1,26 @@
-import { PaymentContainer, StyledForm, ModalOverlay, StyledFormContainer } from "./styles"
+import { PaymentContainer, StyledForm, ModalOverlay, StyledFormContainer, StyledButtonContainer } from "./styles";
+import { useModal } from '../../contexts/ModalContext/useModal';
 
 export const OrderForm = () => {
+
+    const {SetModalIsOpen} = useModal();
+
     return(
         <ModalOverlay>
             <StyledFormContainer>
-                <span> X </span>
+                <span onClick={() => SetModalIsOpen(false)}> X </span>
                 <StyledForm>
                     <div>
-                        <label htmlFor="name">Nome</label>
-                        <input type="text" />
+                        <input type="text" placeholder="Digite seu nome..."/>
                     </div>
                     <div>
-                        <label htmlFor="cpf">CPF</label>
-                        <input type="text" />
+                        <input type="text" placeholder="Digite seu CPF..."/>
                     </div>
                     <div>
-                        <label htmlFor="address">Endereço</label>
-                        <input type="text" />
+                        <input type="text" placeholder="Digite seu endereço..."/>
                     </div>
                     <div>
-                        <label htmlFor="phone">Telefone</label>
-                        <input type="tel" />
+                        <input type="tel" placeholder="Digite seu telefone..."/>
                     </div>
 
                     <PaymentContainer>
@@ -32,6 +32,9 @@ export const OrderForm = () => {
                             <option value="debit">Débito</option>
                         </select>
                     </PaymentContainer>
+                    <StyledButtonContainer>
+                        <button>Confirmar</button>
+                    </StyledButtonContainer>
                 </StyledForm>
             </StyledFormContainer>
         </ModalOverlay>

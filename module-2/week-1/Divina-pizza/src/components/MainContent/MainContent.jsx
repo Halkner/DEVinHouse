@@ -11,7 +11,7 @@ export const MainContent = () => {
             <StyledMain>
                 <StyledBtnContainer>
                     <div>
-                        <button className="btn-new-order" onClick={SetModalIsOpen}>Novo Pedido</button>
+                        <button className="btn-new-order" onClick={() => SetModalIsOpen(true)}>Novo Pedido</button>
                     </div>
                     <div>
                         <button className="btn-show-pizzas">Mostrar Pizzas</button>

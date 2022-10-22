@@ -13,11 +13,12 @@ export const ModalOverlay = styled.div`
 
 export const StyledFormContainer = styled.div`
     width: 30%;
-    height: 80%;
+    height: 90%;
     background-color: white;
     border-radius: 10px;
     display: flex;
     justify-content: center;
+    align-items:center;
     position: relative;
 
     span{
@@ -34,19 +35,23 @@ export const StyledFormContainer = styled.div`
 `
 
 export const StyledForm = styled.div`
-        margin-top: 4em;
         width: 60%;
         display: flex;
         flex-direction: column;
     
-    label{
-        display: block;
-        margin-bottom: 3px;
-        margin-top: 10px;
-    }
     input{
         box-sizing: border-box;
         width: 100%;
+        height: 40px;
+        border: none;
+        border-bottom: 1px solid;
+        margin-top: 2em;
+        font-size: 16px;
+        border-image: linear-gradient(90deg, rgba(0,140,69,1) 0%, rgba(244,249,255,1) 50%, rgba(205,33,42,1) 100%) 1;
+
+        &:focus{
+            outline: none;
+        }
     }
 `
 
@@ -62,7 +67,29 @@ export const PaymentContainer = styled.div`
 
     select{
         width: 30%;
+        height: 40px;
         box-sizing: border-box;
         text-align: center;
+    }
+`
+
+export const StyledButtonContainer = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+
+    button{
+        border: none;
+        width: 120px;
+        height: 40px;
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover{
+            box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.2);
+        }
     }
 `

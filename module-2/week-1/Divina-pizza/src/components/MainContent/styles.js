@@ -20,10 +20,11 @@ export const StyledBtnContainer = styled.div`
         border-radius: 5px;
         transition: all 0.1s;
         margin-bottom: 10px;
+        color:  rgb(255, 255, 255);
     }
 
     button:hover{
-        color:  rgb(255, 255, 255);
+        box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.2);
     }
 
     .btn-new-order{
