@@ -1,4 +1,4 @@
-import { PaymentContainer, StyledForm, ModalOverlay, StyledFormContainer, StyledButtonContainer } from "./styles";
+import { PaymentContainer, StyledForm, ModalOverlay, StyledFormContainer, StyledButtonContainer, ObsContainer} from "./styles";
 import { useModal } from '../../contexts/ModalContext/useModal';
 import { useForm } from 'react-hook-form';
 
@@ -36,6 +36,10 @@ export const OrderForm = () => {
                             <option value="debit">Débito</option>
                         </select>
                     </PaymentContainer>
+
+                    <ObsContainer>
+                        <textarea cols="30" rows="10" placeholder="Deixe uma observação para o seu pedido..."></textarea>
+                    </ObsContainer>
                     <StyledButtonContainer>
                         <button type="submit">Confirmar</button>
                     </StyledButtonContainer>

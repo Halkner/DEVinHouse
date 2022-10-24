@@ -12,6 +12,7 @@ export const ModalOverlay = styled.div`
 `
 
 export const StyledFormContainer = styled.div`
+    overflow-y: auto;
     width: 30%;
     height: 90%;
     background-color: white;
@@ -91,5 +92,13 @@ export const StyledButtonContainer = styled.div`
         &:hover{
             box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.2);
         }
+    }
+`
+
+export const ObsContainer = styled.div`
+    textarea{
+        resize: none;
+        padding: 5px;
+        margin-top: 2rem;
     }
 `
