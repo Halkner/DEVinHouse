@@ -1,39 +1,43 @@
 import { PaymentContainer, StyledForm, ModalOverlay, StyledFormContainer, StyledButtonContainer } from "./styles";
 import { useModal } from '../../contexts/ModalContext/useModal';
+import { useForm } from 'react-hook-form';
 
 export const OrderForm = () => {
 
     const {SetModalIsOpen} = useModal();
+    const {register, handleSubmit} = useForm();
+
+    const formSubmit = data => console.log(data);
 
     return(
         <ModalOverlay>
             <StyledFormContainer>
                 <span onClick={() => SetModalIsOpen(false)}> X </span>
-                <StyledForm>
+                <StyledForm onSubmit={handleSubmit(formSubmit)}>
                     <div>
-                        <input type="text" placeholder="Digite seu nome..."/>
+                        <input type="text" placeholder="Digite seu nome..." {...register("name")}/>
                     </div>
                     <div>
-                        <input type="text" placeholder="Digite seu CPF..."/>
+                        <input type="text" placeholder="Digite seu CPF..." {...register("cpf")}/>
                     </div>
                     <div>
-                        <input type="text" placeholder="Digite seu endereço..."/>
+                        <input type="text" placeholder="Digite seu endereço..." {...register("address")}/>
                     </div>
                     <div>
-                        <input type="tel" placeholder="Digite seu telefone..."/>
+                        <input type="tel" placeholder="Digite seu telefone..." {...register("phone")}/>
                     </div>
 
                     <PaymentContainer>
                         <p>Qual a forma de pagamento?</p>
 
-                        <select>
+                        <select {...register("payment")}>
                             <option value="pix">PIX</option>
                             <option value="credit">Crédito</option>
                             <option value="debit">Débito</option>
                         </select>
                     </PaymentContainer>
                     <StyledButtonContainer>
-                        <button>Confirmar</button>
+                        <button type="submit">Confirmar</button>
                     </StyledButtonContainer>
                 </StyledForm>
             </StyledFormContainer>

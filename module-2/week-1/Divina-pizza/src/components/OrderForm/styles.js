@@ -34,7 +34,7 @@ export const StyledFormContainer = styled.div`
     }
 `
 
-export const StyledForm = styled.div`
+export const StyledForm = styled.form`
         width: 60%;
         display: flex;
         flex-direction: column;
