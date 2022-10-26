@@ -1,37 +1,3 @@
 [
-    {
-        "id": uuidv4(),
-        "name": "Pepperoni",
-        "description": "Pizza de pepperoni",
-        "price": "43,00",
-        "ingredients": [
-            "Cheese", 
-            "Special Sauce", 
-            "Pepperoni"
-        ]
-    },
-    {
-        "id": uuidv4(),
-        "name": "Chicken w/ cream cheese",
-        "description": "Chicken Pizza",
-        "price": "43,00",
-        "ingredients": [
-            "Cheese", 
-            "Special Sauce", 
-            "Cream Cheese",
-            "Frango"
-        ]
-    },
-    {
-        "id": uuidv4(),
-        "name": "Bacon w/ barbecue",
-        "description": "Bacon Pizza",
-        "price": "45,00",
-        "ingredients": [
-            "Cheese", 
-            "Special Sauce", 
-            "BBQ",
-            "Bacon"
-        ]
-    },
+    
 ]
