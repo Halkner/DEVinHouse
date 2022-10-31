@@ -1,5 +1,5 @@
-import { request, response } from "express";
-import { v4 as uuidv4 } from "uuid"
+import { v4 as uuidv4 } from "uuid";
+import fs from 'fs';
 
 export const findMany = (request, response) => {
     const nameQuery = request.query.name || "";
@@ -11,6 +11,9 @@ export const findMany = (request, response) => {
 
 export const create = (request, response) => {
     const {name, description, price, ingredients} = request.body;
+
+    const pizzasFile = fs.readFileSync('../pizzas.json').toString();
+    const pizzas = JSON.parse(pizzasFile);
 
     const pizzaExists = pizzas.find(pizza => pizza.name === name);
 
