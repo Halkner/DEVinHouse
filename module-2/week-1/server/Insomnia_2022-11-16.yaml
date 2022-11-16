@@ -1,0 +1,311 @@
+_type: export
+__export_format: 4
+__export_date: 2022-11-16T21:08:38.729Z
+__export_source: insomnia.desktop.app:v2022.6.0
+resources:
+  - _id: req_039496a9a1a44ed6bf60464377be5075
+    parentId: fld_39ae2d1506b04c328bdf0a6198e1e663
+    modified: 1668632729977
+    created: 1668632628913
+    url: "{{ _.BaseUrl }}/orders/updateStatus/f5b315fe-5bb3-4270-bb0e-3f9fa88211a8"
+    name: Atualizar status
+    description: ""
+    method: PATCH
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1668632628913
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_39ae2d1506b04c328bdf0a6198e1e663
+    parentId: wrk_546ff7e29b6b438abe90bdc53a94d783
+    modified: 1668621896726
+    created: 1668621896726
+    name: Pedidos
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1668621896726
+    _type: request_group
+  - _id: wrk_546ff7e29b6b438abe90bdc53a94d783
+    parentId: null
+    modified: 1665153366646
+    created: 1665153366646
+    name: Divina Pizza
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_ba104d5ee9a9493d8ca74e1a5fea67a7
+    parentId: fld_39ae2d1506b04c328bdf0a6198e1e663
+    modified: 1668632619843
+    created: 1668627243523
+    url: "{{ _.BaseUrl }}/orders/6dae6442-3722-40fa-89fd-50d53a1df1bd"
+    name: Deletar
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1668627258125
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_8b8a5bab253c4795b4e1083d591e3824
+    parentId: fld_39ae2d1506b04c328bdf0a6198e1e663
+    modified: 1668627308655
+    created: 1668627229820
+    url: "{{ _.BaseUrl }}/orders"
+    name: Listar
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1668627258100
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_0f13b979bbd8477b9e20f7b68ee48ae1
+    parentId: fld_39ae2d1506b04c328bdf0a6198e1e663
+    modified: 1668632596552
+    created: 1668627251274
+    url: "{{ _.BaseUrl }}/orders"
+    name: Pedir
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Matheus Adriano Martins",
+        	"cpf": "106.424.969-86",
+        	"address": "Rua Bertoldo Simão de Oliveira",
+        	"phone": "(48) 9 9152-5320",
+        	"payment": "PIX",
+        	"obs": "Sem cebola",
+        	"pizza": "Calabresa"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1668627258087.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_cafb19854d814b35a8e175040270acfb
+    parentId: fld_39ae2d1506b04c328bdf0a6198e1e663
+    modified: 1668632602260
+    created: 1668627258075
+    url: "{{ _.BaseUrl }}/orders/9bb629c2-d7bf-41b0-824a-4af7679cfa8b"
+    name: Atualizar
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Matheus Adriano Martins",
+        	"cpf": "106.424.969-86",
+        	"address": "Rua Bertoldo Simão de Oliveira",
+        	"phone": "(48) 9 9152-5320",
+        	"payment": "PIX",
+        	"obs": "Sem cebola",
+        	"pizza": "Frango"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1668627258075
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_c6db26bff2c243ecafd5b940d1d0edb6
+    parentId: fld_9fb1a697f3064a8cbd6d86492902388d
+    modified: 1668621883204
+    created: 1668188331203
+    url: "{{ _.BaseUrl }}/pizzas/1dc2b356-1745-4056-8a15-25a54f0b75d6"
+    name: Deletar
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1668621248025
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_9fb1a697f3064a8cbd6d86492902388d
+    parentId: wrk_546ff7e29b6b438abe90bdc53a94d783
+    modified: 1668621872256
+    created: 1668621872256
+    name: Pizzas
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1668621872256
+    _type: request_group
+  - _id: req_aefa2f7e2ff84d74af10bfae6a9f5b19
+    parentId: fld_9fb1a697f3064a8cbd6d86492902388d
+    modified: 1668621885921
+    created: 1665153492815
+    url: "{{ _.BaseUrl }}/pizzas"
+    name: Listar
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1668621248012.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_9bf67fbc82394354ad9007ce506a3a10
+    parentId: fld_9fb1a697f3064a8cbd6d86492902388d
+    modified: 1668632375359
+    created: 1665153567110
+    url: "{{ _.BaseUrl }}/pizzas"
+    name: Pedir
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Frango",
+        	"description": "10/10 Pizza",
+        	"price": "43,00",
+        	"ingredients": ["Cheese", "Special Sauce", "Chicken", "Catupiry"]
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1668621248000
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_94735ada35bb450c93e1ce050e06dfd5
+    parentId: fld_9fb1a697f3064a8cbd6d86492902388d
+    modified: 1668621889916
+    created: 1668621247975
+    url: "{{ _.BaseUrl }}/pizzas/ac718b19-b18a-473a-9c38-771ed3ee580a"
+    name: Atualizar
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Calabresa",
+        	"description": "10/10 Pizza",
+        	"price": "43,00",
+        	"ingredients": ["Cheese", "Special Sauce", "Calabrian", "Onion"]
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1668621247975
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_ca788b5ac8dca48aa4bace2c221a78d384d2ee22
+    parentId: wrk_546ff7e29b6b438abe90bdc53a94d783
+    modified: 1665153474293
+    created: 1665153366653
+    name: Base Environment
+    data:
+      BaseUrl: http://localhost:3000
+    dataPropertyOrder:
+      "&":
+        - BaseUrl
+    color: null
+    isPrivate: false
+    metaSortKey: 1665153366653
+    _type: environment
+  - _id: jar_ca788b5ac8dca48aa4bace2c221a78d384d2ee22
+    parentId: wrk_546ff7e29b6b438abe90bdc53a94d783
+    modified: 1665153366655
+    created: 1665153366655
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_6afd9d1dd1684b589aa1f5e979fa4701
+    parentId: wrk_546ff7e29b6b438abe90bdc53a94d783
+    modified: 1665153366647
+    created: 1665153366647
+    fileName: Divina Pizza
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_cdbcea81ea244e1e9f483c66fe522ed7
+    parentId: env_ca788b5ac8dca48aa4bace2c221a78d384d2ee22
+    modified: 1668186409837
+    created: 1665153431686
+    name: Pizzas
+    data:
+      BaseUrl: http://localhost:3000
+    dataPropertyOrder:
+      "&":
+        - BaseUrl
+    color: "#7d69cb"
+    isPrivate: false
+    metaSortKey: 1665153431686
+    _type: environment
