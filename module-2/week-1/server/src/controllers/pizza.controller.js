@@ -1,11 +1,10 @@
-import { read, readFileSync, writeFileSync } from "fs";
-import { request } from "http";
+import { writeFileSync } from "fs";
 import { v4 as uuidv4 } from "uuid";
+import { getPizzaDB, PIZZAS_DB } from "../database/connection";
 
 export const findMany = (request, response) => {
 
-    const pizzasFile = readFileSync('./src/pizzas.json').toString();
-    const pizzas = JSON.parse(pizzasFile);
+    const pizzas = getPizzaDB();
     const nameQuery = request.query.name || "";
 
     const filteredPizzas = pizzas.filter(pizza => pizza.name.toLowerCase().includes(nameQuery.toLowerCase()));
@@ -14,10 +13,10 @@ export const findMany = (request, response) => {
 }
 
 export const create = (request, response) => {
+
     const {name, description, price, ingredients} = request.body;
 
-    const pizzasFile = readFileSync('./src/pizzas.json').toString();
-    const pizzas = JSON.parse(pizzasFile);
+    const pizzas = getPizzaDB();
 
     const pizzaExists = pizzas.find(pizza => pizza.name === name);
 
@@ -33,15 +32,14 @@ export const create = (request, response) => {
         ingredients
     }
 
-    writeFileSync('./src/pizzas.json',JSON.stringify([...pizzas, newPizza]));
+    writeFileSync(PIZZAS_DB, JSON.stringify([...pizzas, newPizza]));
 
     return response.status(201).json(newPizza);
 }
 
 export const deletePizza = (request, response) => {
 
-    const pizzasInFile = readFileSync('./src/pizzas.json').toString();
-    const pizzas = JSON.parse(pizzasInFile);
+    const pizzas = getPizzaDB();
     
     const {id} = request.params;
 
@@ -53,7 +51,7 @@ export const deletePizza = (request, response) => {
     
     const filteredPizzas = pizzas.filter(pizza => pizza.id != id);
 
-    writeFileSync('./src/pizzas.json', JSON.stringify(filteredPizzas));
+    writeFileSync(PIZZAS_DB, JSON.stringify(filteredPizzas));
 
     return response.status(200).json({success: 'Pizza removida!'});
 }
@@ -62,9 +60,27 @@ export const updatePizza = (request, response) => {
 
     const {name, description, price, ingredients} = request.body;
 
-    const pizzasInFile = readFileSync('./src/pizzas.json').toString();
-    const pizzas = JSON.parse(pizzasInFile);
+    const pizzas = getPizzaDB();
 
+    const {id} = request.params;
+
+    const selectedPizza = pizzas.find(pizza => pizza.id === id);
+
+    if (!selectedPizza){
+        return response.status(404).json({error: "Pizza não encontrada!"})
+    }
     
+    const updatedPizza = pizzas.map((pizza) => {
+        if (pizza.id === id){
+            pizza.name = name || pizza.name;
+            pizza.description = description || pizza.description;
+            pizza.price = price || pizza.price;
+            pizza.ingredients = ingredients || pizza.ingredients;
+        }
+        return pizza
+    });
 
+    writeFileSync(PIZZAS_DB, JSON.stringify(updatedPizza));
+
+    return response.status(200).json(updatedPizza);
 }

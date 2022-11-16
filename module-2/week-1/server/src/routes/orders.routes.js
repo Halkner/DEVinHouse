@@ -1,27 +1,18 @@
 import { Router } from 'express';
-import { create, findMany, findSome } from '../controllers/order.controller.js';
+import { create, deleteOrder, findMany, findOne, updateOrder, updateStatus } from '../controllers/order.controller.js';
 
 const ordersRoutes = Router();
 
 ordersRoutes.get('/orders', findMany);
+
 ordersRoutes.post('/orders', create);
-ordersRoutes.get('/orders/:id', findSome);
 
-ordersRoutes.delete('/orders/:id', (request, response) => {
-    const {id} = request.params;
+ordersRoutes.get('/orders/:id', findOne);
 
-    const selectedOrder = orders.find(order => order.id === id);
+ordersRoutes.delete('/orders/:id', deleteOrder);
 
-    if (!selectedOrder){
-        return response.status(404).json({error: "Pedido não encontrado!"})
-    }
-    
-    const filteredOrders = orders.filter(order => order.id != id);
+ordersRoutes.put('/orders/:id', updateOrder);
 
-    orders = [...filteredOrders];
-
-    return response.status(200).json({success: 'Pedido removido!'});
-
-})
+ordersRoutes.patch('/orders/updateStatus/:id', updateStatus);
 
 export default ordersRoutes;
