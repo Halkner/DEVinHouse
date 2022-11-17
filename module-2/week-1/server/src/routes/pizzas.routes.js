@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import { findMany, create, deletePizza, updatePizza } from '../controllers/pizza.controller.js';
+import { create, deletePizza, updatePizza, findAll } from '../controllers/pizza.controller';
 
 const pizzasRoutes = Router();
 
-pizzasRoutes.get('/pizzas', findMany);
+pizzasRoutes.get('/pizzas', findAll);
 
 pizzasRoutes.post('/pizzas', create);
 

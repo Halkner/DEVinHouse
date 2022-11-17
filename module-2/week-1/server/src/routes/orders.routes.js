@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { create, deleteOrder, findMany, findOne, updateOrder, updateStatus } from '../controllers/order.controller.js';
+import { create, deleteOrder, findMany, findOne, updateOrder, updateStatus } from '../controllers/order.controller';
 
 const ordersRoutes = Router();
 
