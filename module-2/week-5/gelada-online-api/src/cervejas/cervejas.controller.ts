@@ -8,16 +8,15 @@ import {
   Delete,
 } from '@nestjs/common';
 import { CervejasService } from './cervejas.service';
-import { CreateCervejaDto } from './dto/create-cerveja.dto';
-import { UpdateCervejaDto } from './dto/update-cerveja.dto';
+import { Cerveja } from './entities/cerveja.entity';
 
 @Controller('cervejas')
 export class CervejasController {
   constructor(private readonly cervejasService: CervejasService) {}
 
   @Post()
-  create(@Body() createCervejaDto: CreateCervejaDto) {
-    return this.cervejasService.create(createCervejaDto);
+  create(@Body() beer: Cerveja) {
+    return this.cervejasService.create(beer);
   }
 
   @Get()
@@ -31,8 +30,8 @@ export class CervejasController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateCervejaDto: UpdateCervejaDto) {
-    return this.cervejasService.update(+id, updateCervejaDto);
+  update(@Param('id') id: string) {
+    return this.cervejasService.update(+id);
   }
 
   @Delete(':id')

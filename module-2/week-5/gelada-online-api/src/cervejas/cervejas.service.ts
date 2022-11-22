@@ -1,11 +1,25 @@
-import { Injectable } from '@nestjs/common';
-import { CreateCervejaDto } from './dto/create-cerveja.dto';
-import { UpdateCervejaDto } from './dto/update-cerveja.dto';
+import { ConflictException, Injectable } from '@nestjs/common';
+import { Database } from 'src/database/database';
+import { Cerveja } from './entities/cerveja.entity';
 
 @Injectable()
 export class CervejasService {
-  create(createCervejaDto: CreateCervejaDto) {
-    return 'This action adds a new cerveja';
+  constructor(private database: Database) {}
+
+
+  create(beer: Cerveja) {
+    const beers = this.database.loadData();
+    const beerExists = beers.find((b: Cerveja) => b.name.toLowerCase() === beer.name.toLowerCase());
+
+    if(beerExists) {
+      throw new ConflictException({
+        statusCode: 409,
+        message: 'Beer already exists',
+      });
+    }
+    this.database.saveData(beer);
+
+    return beer;
   }
 
   findAll() {
@@ -16,7 +30,7 @@ export class CervejasService {
     return `This action returns a #${id} cerveja`;
   }
 
-  update(id: number, updateCervejaDto: UpdateCervejaDto) {
+  update(id: number) {
     return `This action updates a #${id} cerveja`;
   }
 

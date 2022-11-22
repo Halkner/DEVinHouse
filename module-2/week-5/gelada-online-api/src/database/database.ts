@@ -1,12 +1,12 @@
 import { Injectable } from "@nestjs/common";
 import { readFileSync, writeFileSync } from "fs";
-import { BeerType } from "src/cervejas/types/beer-type.enum";
+import { Cerveja } from "src/cervejas/entities/cerveja.entity";
 
 @Injectable()
 export class Database{
     private FILENAME = './src/database/beers.json';
 
-    public saveData(data: BeerType) {
+    public saveData(data: Cerveja) {
         const content = JSON.parse(readFileSync(this.FILENAME, 'utf-8'));
 
         const updatedContent = [...content, data];
