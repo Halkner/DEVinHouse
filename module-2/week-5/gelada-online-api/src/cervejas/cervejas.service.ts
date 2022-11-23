@@ -1,4 +1,4 @@
-import { ConflictException, Injectable } from '@nestjs/common';
+import { ConflictException, Injectable, NotFoundException } from '@nestjs/common';
 import { Database } from 'src/database/database';
 import { Cerveja } from './entities/cerveja.entity';
 
@@ -22,8 +22,19 @@ export class CervejasService {
     return beer;
   }
 
-  findAll() {
-    return `This action returns all cervejas`;
+  findAll(page: number, limit: number) {
+    const beers = this.database.loadData();
+    page = page || 0;
+    limit = limit || 10;
+
+    const startIndex = page * limit;
+    const endIndex = startIndex + limit;
+
+    if ( startIndex > beers.length) {
+      throw new NotFoundException(`Page ${page} out of bounds`);
+    }
+
+    return beers.slice(startIndex, endIndex);
   }
 
   findOne(id: number) {

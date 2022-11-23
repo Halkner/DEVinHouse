@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { CervejasService } from './cervejas.service';
 import { Cerveja } from './entities/cerveja.entity';
@@ -20,8 +21,8 @@ export class CervejasController {
   }
 
   @Get()
-  findAll() {
-    return this.cervejasService.findAll();
+  findAll(@Query('page') page, @Query('limit') limit) {
+    return this.cervejasService.findAll(page, limit);
   }
 
   @Get(':id')
