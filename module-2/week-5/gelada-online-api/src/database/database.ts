@@ -21,4 +21,8 @@ export class Database{
 
         return content;
     }
+
+    public rewriteData(data: Cerveja[]) {
+        writeFileSync(this.FILENAME, JSON.stringify(data));
+    }
 }

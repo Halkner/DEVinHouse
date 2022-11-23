@@ -1,5 +1,6 @@
 import { ConflictException, Injectable, NotFoundException } from '@nestjs/common';
 import { writeFileSync } from 'fs';
+import { STATUS_CODES } from 'http';
 import { Database } from 'src/database/database';
 import { Cerveja } from './entities/cerveja.entity';
 
@@ -66,12 +67,27 @@ export class CervejasService {
 
     beers[indexBeer] = beerInfo;
 
-    writeFileSync('./src/database/beers.json', JSON.stringify(beers));
+    this.database.rewriteData(beers);
 
     return beers[indexBeer];
   }
 
   remove(beerName: string) {
-    return `This action removes a #${beerName} cerveja`;
+    const beers = this.database.loadData();
+    const indexBeer = beers.findIndex((beer) => beer.name.toLowerCase() === beerName.toLowerCase());
+
+    if(indexBeer === -1){
+      throw new NotFoundException({
+        error: 404,
+        message: 'Beer not found',
+      });
+    }
+
+    beers.splice(indexBeer, 1);
+
+    this.database.rewriteData(beers);
+
+    return;
+
   }
 }
