@@ -3,10 +3,10 @@ import {
   Get,
   Post,
   Body,
-  Patch,
   Param,
   Delete,
   Query,
+  Put,
 } from '@nestjs/common';
 import { CervejasService } from './cervejas.service';
 import { Cerveja } from './entities/cerveja.entity';
@@ -25,18 +25,18 @@ export class CervejasController {
     return this.cervejasService.findAll(page, limit);
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.cervejasService.findOne(+id);
+  @Get(':beerName')
+  findOne(@Param('beerName') beerName: string) {
+    return this.cervejasService.findOne(beerName);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string) {
-    return this.cervejasService.update(+id);
+  @Put(':beerName')
+  update(@Param('beerName') beerName: string, @Body() beerInfo: Cerveja) {
+    return this.cervejasService.update(beerName, beerInfo);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.cervejasService.remove(+id);
+  @Delete(':beerName')
+  remove(@Param('beerName') beerName: string) {
+    return this.cervejasService.remove(beerName);
   }
 }
