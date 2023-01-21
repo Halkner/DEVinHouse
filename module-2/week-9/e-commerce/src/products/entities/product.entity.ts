@@ -1,23 +1,29 @@
-import { categoryEnum } from "src/utils/products.enum";
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { ShoppingCart } from 'src/shopping-carts/entities/shopping-cart.entity';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { ProductCategories } from '../utils/product-categories.enum';
 
-@Entity({name: 'Products'})
+@Entity({ name: 'products' })
 export class Product {
-    @PrimaryGeneratedColumn()
-    id: string;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column({length: 100})
-    name: string;
+  @Column({ length: 100 })
+  name: string;
 
-    @Column('float')
-    value: number;
+  @Column('float')
+  price: number;
 
-    @Column({length: 255})
-    description: string;
+  @Column({ length: 250 })
+  description: string;
 
-    @Column('bool')
-    available: boolean;
+  @Column('int')
+  category: ProductCategories;
 
-    @Column('int')
-    category: categoryEnum;
+  @Column('bool')
+  isActive: boolean;
+
+  // @ManyToOne(() => ShoppingCart, (shoppingCart) => shoppingCart.products, {
+  //   onDelete: 'SET NULL',
+  // })
+  shoppingCart?: ShoppingCart;
 }
