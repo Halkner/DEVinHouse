@@ -1,0 +1,223 @@
+import { BadRequestException } from '@nestjs/common';
+import { Test, TestingModule } from '@nestjs/testing';
+import axios from 'axios';
+import { StateService } from 'src/modules/states/services/state.service';
+import { TestStatic } from 'src/utils/test';
+import { CityService } from '../services/city.service';
+import { CityController } from './city.controller';
+
+describe('CityController', () => {
+  let controller: CityController;
+
+  const mockCityService = {
+    findById: jest.fn(),
+    createNewCity: jest.fn(),
+    updateCity: jest.fn(),
+    createCity: jest.fn(),
+    deleteCity: jest.fn(),
+  };
+
+  const mockStateService = {
+    getByAll: jest.fn(),
+    createState: jest.fn(),
+    createNewState: jest.fn(),
+  };
+
+  beforeAll(async () => {
+    const module: TestingModule = await Test.createTestingModule({
+      controllers: [CityController],
+      providers: [
+        { provide: CityService, useValue: mockCityService },
+        { provide: StateService, useValue: mockStateService },
+        { provide: axios, useValue: { get: jest.fn() } },
+      ],
+    }).compile();
+
+    controller = module.get<CityController>(CityController);
+  });
+
+  beforeEach(() => {
+    mockCityService.createCity.mockReset();
+    mockCityService.deleteCity.mockReset();
+    mockCityService.findById.mockReset();
+    mockCityService.updateCity.mockReset();
+    mockCityService.createNewCity.mockReset();
+  });
+
+  describe('getById', () => {
+    it('should return a city by id', async () => {
+      const city = TestStatic.cityData();
+
+      mockCityService.findById.mockResolvedValue(city);
+
+      const foundCity = await controller.getById(city.id);
+
+      expect(foundCity).toMatchObject({ id: city.id });
+
+      expect(mockCityService.findById).toHaveBeenCalledTimes(1);
+    });
+
+    it('should throw an error if city not found', async () => {
+      try {
+        await controller.getById(1);
+        await mockCityService.findById(1);
+      } catch (error) {
+        expect(error).toBeInstanceOf(TypeError);
+      }
+    });
+
+    it('should throw an error if id is not a number', async () => {
+      const anyValue = 'notValid' as unknown as number;
+      try {
+        await controller.getById(anyValue);
+      } catch (error) {
+        expect(error).toBeInstanceOf(BadRequestException);
+      }
+    });
+  });
+
+  describe('create', () => {
+    it('should create a city with valid input', async () => {
+      const mockCity = {
+        name: 'Test City',
+        state_id: 1,
+      };
+
+      jest.spyOn(mockCityService, 'createNewCity').mockResolvedValue(undefined);
+
+      const response = await controller.create(mockCity);
+
+      expect(response).toEqual('New city created');
+    });
+
+    it('should throw error with invalid input', async () => {
+      const mockCity = {
+        name: '',
+        state_id: 1,
+      };
+
+      await controller.create(mockCity).catch((error) => {
+        expect(error).toBeInstanceOf(BadRequestException);
+      });
+    });
+  });
+
+  describe('createAllCities', () => {
+    it('should create all cities', async () => {
+      const mockData = [
+        {
+          nome: 'City 1',
+          microrregiao: {
+            mesorregiao: {
+              UF: {
+                sigla: 'SC',
+              },
+            },
+          },
+        },
+        {
+          nome: 'City 2',
+          microrregiao: {
+            mesorregiao: {
+              UF: {
+                sigla: 'PE',
+              },
+            },
+          },
+        },
+      ];
+
+      const mockStates = [
+        {
+          id: 1,
+          initials: 'SC',
+        },
+        {
+          id: 2,
+          initials: 'PE',
+        },
+      ];
+
+      jest.spyOn(axios, 'get').mockResolvedValue({ data: mockData });
+      jest.spyOn(mockStateService, 'getByAll').mockResolvedValue(mockStates);
+
+      const response = await controller.createAllCities();
+
+      expect(response).toEqual('Cidades salvas com sucesso');
+    });
+
+    it('should handle error properly', async () => {
+      jest.spyOn(axios, 'get').mockRejectedValue(new Error());
+
+      await expect(controller.createAllCities()).rejects.toThrow();
+    });
+  });
+
+  describe('updateById', () => {
+    it('should update a city successfully', async () => {
+      const id = 1;
+      const body = TestStatic.cityDto();
+
+      jest
+        .spyOn(mockCityService, 'updateCity')
+        .mockResolvedValue('Cidade atualizada com sucesso');
+
+      const response = await mockCityService.updateCity(id, body);
+
+      expect(response).toBe('Cidade atualizada com sucesso');
+    });
+
+    it('should throw an error if updateById method fails', async () => {
+      const id = 1;
+      const body = TestStatic.cityDto();
+
+      jest.spyOn(controller, 'updateById').mockRejectedValue(new Error());
+
+      await expect(controller.updateById(id, body)).rejects.toThrowError(Error);
+      expect(controller.updateById).toHaveBeenCalledWith(1, body);
+    });
+
+    it('should throw an error if id parameter is not a number', async () => {
+      const id = 'invalidId';
+      const body = TestStatic.cityDto();
+
+      await controller
+        .updateById(id as unknown as number, body)
+        .catch((error: Error) => {
+          expect(error).toBeInstanceOf(Error);
+        });
+    });
+  });
+  describe('deleteById', () => {
+    it('should delete a city successfully', async () => {
+      const id = 1;
+
+      jest
+        .spyOn(mockCityService, 'deleteCity')
+        .mockResolvedValue({ acknowledged: true, deletedCount: 1 });
+
+      const response = await mockCityService.deleteCity(id);
+
+      expect(response).toMatchObject({ acknowledged: true, deletedCount: 1 });
+    });
+
+    it('should throw an error if deleteById method fails', async () => {
+      const id = 1;
+
+      jest.spyOn(controller, 'deleteById').mockRejectedValue(new Error());
+
+      await expect(controller.deleteById(id)).rejects.toThrowError(Error);
+      expect(controller.deleteById).toHaveBeenCalledWith(1);
+    });
+
+    it('should throw an error if id parameter is not a number', async () => {
+      const id = 'invalidId';
+
+      await controller
+        .deleteById(id as unknown as number)
+        .catch((error: Error) => {
+          expect(error).toBeInstanceOf(Error);
+        });
+    });
+  });
+});
