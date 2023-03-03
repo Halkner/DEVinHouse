@@ -24,32 +24,18 @@ export class CityService {
     return foundCity;
   }
 
-  async createCity(newCity: CreateCityDto): Promise<void> {
-    await this.cityRepository.createCity(newCity);
-  }
-
-  async createNewCity(newCity: CreateCityDto): Promise<void> {
-    await this.stateRepository.findOneByOrFail({ id: newCity.state_id });
+  async addCustomCity(city: CreateCityDto): Promise<void> {
+    await this.stateRepository.findOneByOrFail({ id: city.state_id });
 
     const cityAlreadyExists = await this.stateRepository.findOne({
-      where: { name: newCity.name },
+      where: { name: city.name },
     });
 
     if (cityAlreadyExists) {
       throw new ConflictException('cityAlreadyExists');
     }
 
-    await this.cityRepository.createCity(newCity);
-  }
-
-  async deleteCity(id: number): Promise<object> {
-    const foundCity = await this.cityRepository.getById(id);
-    if (!foundCity) {
-      throw new NotFoundException('cityNotFound');
-    }
-    await this.cityRepository.delete(foundCity);
-
-    return { acknowledged: true, deletedCount: 1 };
+    await this.createCity(city);
   }
 
   async updateCity(id: number, body: CreateCityDto): Promise<string> {
@@ -62,9 +48,23 @@ export class CityService {
 
       await this.cityRepository.save(city);
 
-      return 'City updated successfully';
+      return 'Cidade atualizada com sucesso';
     } catch (error) {
       throw error;
     }
+  }
+
+  async createCity(newCity: CreateCityDto): Promise<void> {
+    await this.cityRepository.createCity(newCity);
+  }
+
+  async deleteCity(id: number): Promise<object> {
+    const foundCity = await this.cityRepository.getById(id);
+    if (!foundCity) {
+      throw new NotFoundException('cityNotFound');
+    }
+    await this.cityRepository.delete(foundCity);
+
+    return { acknowledged: true, deletedCount: 1 };
   }
 }

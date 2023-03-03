@@ -1,17 +1,17 @@
-import { BadRequestException } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
-import axios from 'axios';
 import { StateService } from 'src/modules/states/services/state.service';
-import { TestStatic } from 'src/utils/test';
 import { CityService } from '../services/city.service';
 import { CityController } from './city.controller';
+import { TestStatic } from 'src/utils/test';
+import { BadRequestException } from '@nestjs/common';
+import axios from 'axios';
 
 describe('CityController', () => {
   let controller: CityController;
 
   const mockCityService = {
     findById: jest.fn(),
-    createNewCity: jest.fn(),
+    addCustomCity: jest.fn(),
     updateCity: jest.fn(),
     createCity: jest.fn(),
     deleteCity: jest.fn(),
@@ -37,11 +37,15 @@ describe('CityController', () => {
   });
 
   beforeEach(() => {
+    mockCityService.addCustomCity.mockReset();
     mockCityService.createCity.mockReset();
     mockCityService.deleteCity.mockReset();
     mockCityService.findById.mockReset();
     mockCityService.updateCity.mockReset();
-    mockCityService.createNewCity.mockReset();
+  });
+
+  it('should be defined', () => {
+    expect(controller).toBeDefined();
   });
 
   describe('getById', () => {
@@ -83,11 +87,11 @@ describe('CityController', () => {
         state_id: 1,
       };
 
-      jest.spyOn(mockCityService, 'createNewCity').mockResolvedValue(undefined);
+      jest.spyOn(mockCityService, 'addCustomCity').mockResolvedValue(undefined);
 
       const response = await controller.create(mockCity);
 
-      expect(response).toEqual('New city created');
+      expect(response).toEqual('Cidade salva com sucesso');
     });
 
     it('should throw error with invalid input', async () => {
@@ -110,7 +114,7 @@ describe('CityController', () => {
           microrregiao: {
             mesorregiao: {
               UF: {
-                sigla: 'SC',
+                sigla: 'SP',
               },
             },
           },
@@ -120,7 +124,7 @@ describe('CityController', () => {
           microrregiao: {
             mesorregiao: {
               UF: {
-                sigla: 'PE',
+                sigla: 'RJ',
               },
             },
           },
@@ -130,11 +134,11 @@ describe('CityController', () => {
       const mockStates = [
         {
           id: 1,
-          initials: 'SC',
+          initials: 'SP',
         },
         {
           id: 2,
-          initials: 'PE',
+          initials: 'RJ',
         },
       ];
 
