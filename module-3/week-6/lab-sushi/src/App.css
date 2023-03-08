@@ -52,7 +52,7 @@
   cursor: pointer;
 }
 
-.cart-nav-container{
+.cart-nav-container {
   display: flex;
   align-items: center;
   gap: 0.3rem;
@@ -188,7 +188,7 @@ th {
 
 /* contact us styles */
 
-.contact-main-container{
+.contact-main-container {
   height: 100%;
   width: 100%;
 
@@ -201,7 +201,7 @@ th {
   align-items: center;
 }
 
-.contact-container{
+.contact-container {
   width: 80%;
   height: 80%;
   background-color: #fff;
@@ -213,8 +213,49 @@ th {
   justify-content: space-between;
 }
 
-.contact-form-container{
+.contact-form-container {
   width: 50%;
   height: 100%;
   background-color: #000;
+}
+
+.contact-info-container {
+  width: 50%;
+  padding: 20px 25px;
+  box-sizing: border-box;
+}
+
+.contact-info-container h1 {
+  font-size: 30px;
+}
+
+.contact-info-container h2 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  margin: 1.5rem 1.5rem;
+}
+
+.contact-info > div {
+  display: flex;
+}
+
+.email-info,
+.phone-info,
+.wpp-info,
+.hours-info {
+  margin-left: 1.5rem;
+  font-weight: 500;
+}
+
+.email-info > p,
+.phone-info > p,
+.wpp-info > p,
+.hours-info > p {
+  color: rgba(0, 0, 0, 0.7);
 }
