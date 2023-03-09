@@ -42,7 +42,30 @@ export const ContactUs = () => {
                 </div>
 
                 <div className="contact-form-container">
+                    <h1>Envie sua mensagem para nós</h1>
+                    <form>
+                        <div>
+                            <label htmlFor="nome">Nome</label>
+                            <input type="text" name="nome"/>
+                        </div>
 
+                        <div>
+                            <label htmlFor="email">E-mail</label>
+                            <input type="email" name="email"/>
+                        </div>
+
+                        <div>
+                            <label htmlFor="telefone">Telefone (opcional)</label>
+                            <input type="tel"/>
+                        </div>
+
+                        <div>
+                            <label htmlFor="text">Sua mensagem</label>
+                            <textarea />
+                        </div>
+
+                        <button type="submit">Enviar</button>
+                    </form>
                 </div>
             </div>
         </div>

@@ -33,7 +33,8 @@ const Menu = () => {
           <li onClick={() => navigate('/contact-us')}>
             Fale Conosco
           </li>
-          <li>
+
+          <li onClick={() => navigate('/my-orders')}>
             Meus Pedidos
           </li>
           <li className="cart-nav-container" onClick={() => navigate('/cart')} data-testid="cart-link">
