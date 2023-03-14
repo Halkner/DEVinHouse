@@ -5,7 +5,7 @@
       "clientAddress": {
         "cep": "62870000",
         "address": "teste endereco",
-        "number": "",
+        "number": "58",
         "state": "CE",
         "neighborhood": "teste bairro",
         "city": "Pacajus"
@@ -24,7 +24,7 @@
         "neighborhood": "",
         "city": ""
       },
-      "paymentType": "",
+      "paymentType": "DEB",
       "haveHashi": "SIM",
       "id": 2
     }

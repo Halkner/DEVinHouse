@@ -1,11 +1,12 @@
 import {CreditCard} from '@phosphor-icons/react'
+import { OPTIONS_PAYMENT } from '../../constants'
 
-export const MyOrderCard = (props) => {
+export const MyOrderCard = ({order}) => {
     return(
         <div className="my-order-card-container">
             <div className="my-order-card-header">
                 <div className="my-order-card-header-left">
-                    <h1>Pedido #3</h1>
+                    <h1>Pedido #{order.id}</h1>
                     <span>Em 13/02/2023 às 11:05</span>
                 </div>
                 <div className="my-order-card-header-right">
@@ -21,8 +22,8 @@ export const MyOrderCard = (props) => {
                     <div className="delivery-way-content">
                         <h3>Endereço de entrega</h3>
 
-                        <p>Rua Exemplo, bairro Exemplo</p>
-                        <p>Buriti - Pacajus</p>
+                        <p>{order.clientAddress.address}, {order.clientAddress.neighborhood}</p>
+                        <p>{order.clientAddress.city} - {order.clientAddress.state}</p>
                     </div>
                 </div>
 
@@ -33,7 +34,7 @@ export const MyOrderCard = (props) => {
                     
                     <div className="payment-way-content">
                         <CreditCard size={26} />
-                        <p><b>Cartão de crédito</b></p>
+                        <p><b>{OPTIONS_PAYMENT.find(opt => opt.value === order.paymentType)?.label}</b></p>
                     </div>
                 </div>
 
