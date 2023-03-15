@@ -1,13 +1,13 @@
 {
   "orders": [
     {
-      "clientName": "henrique",
+      "clientName": "Henrique",
       "clientAddress": {
         "cep": "62870000",
-        "address": "teste endereco",
+        "address": "Rua Eurico Gaspar Dutra",
         "number": "58",
         "state": "CE",
-        "neighborhood": "teste bairro",
+        "neighborhood": "Jardim Anápolis",
         "city": "Pacajus"
       },
       "paymentType": "CRED",
@@ -15,14 +15,15 @@
       "id": 1
     },
     {
-      "clientName": "Henrique Dev",
+      "clientName": "Henrique",
       "clientContact": "343434",
       "clientAddress": {
-        "cep": "3434",
-        "address": "34",
-        "state": "",
-        "neighborhood": "",
-        "city": ""
+        "cep": "88161040",
+        "address": "Rua Bertoldo Simão de Oliveira",
+        "state": "SC",
+        "number": "58",
+        "neighborhood": "Universitário",
+        "city": "Biguaçu"
       },
       "paymentType": "DEB",
       "haveHashi": "SIM",

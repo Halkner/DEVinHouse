@@ -22,7 +22,7 @@ export const MyOrderCard = ({order}) => {
                     <div className="delivery-way-content">
                         <h3>Endereço de entrega</h3>
 
-                        <p>{order.clientAddress.address}, {order.clientAddress.neighborhood}</p>
+                        <p>{order.clientAddress.address}, {order.clientAddress.number} - {order.clientAddress.neighborhood}</p>
                         <p>{order.clientAddress.city} - {order.clientAddress.state}</p>
                     </div>
                 </div>
@@ -34,7 +34,7 @@ export const MyOrderCard = ({order}) => {
                     
                     <div className="payment-way-content">
                         <CreditCard size={26} />
-                        <p><b>{OPTIONS_PAYMENT.find(opt => opt.value === order.paymentType)?.label}</b></p>
+                        <p><b>{OPTIONS_PAYMENT.find(opt => opt.value === order.paymentType).label}</b></p>
                     </div>
                 </div>
 
