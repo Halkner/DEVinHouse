@@ -7,14 +7,17 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import './App.css';
 import { ToastContainer } from 'react-toastify';
+import { MenuProvider } from './contexts/MenuContext';
 
 function App() {
   return (
     <BrowserRouter>
       <CartProvider>
-        <Menu />
-        <AppRoutes />
-        <ToastContainer />
+        <MenuProvider>
+          <Menu />
+          <AppRoutes />
+          <ToastContainer />
+        </MenuProvider>
       </CartProvider>
     </BrowserRouter>
   );
