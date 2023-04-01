@@ -22,7 +22,7 @@ export const MenuProvider = ({ children }) => {
       .catch(() => toast.error('Houve um erro ao buscar os produtos :('))
   }
 
-  const [allCards, setAllCards] = useState(products)
+  const [allCards, setAllCards] = useState([products])
 
   const [filter, setFilter] = useState('')
 
@@ -30,7 +30,7 @@ export const MenuProvider = ({ children }) => {
     if(query){
       setFilter(query)
     }else{
-      setFilter('')
+      setFilter(null)
     }
   }
 
